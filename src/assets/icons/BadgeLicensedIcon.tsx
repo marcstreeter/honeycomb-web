@@ -1,14 +1,11 @@
 import type * as React from 'react';
 
-const BadgeLicensedIcon = (props: React.SVGProps<SVGSVGElement>) => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    viewBox="0 80 652 625"
-    width={40}
-    height={80}
-    title="Licensed and Insured Badge"
-    {...props}
-  >
+const BadgeLicensedIcon = ({
+  title = 'Licensed and Insured Badge',
+  ...props
+}: React.SVGProps<SVGSVGElement> & { title?: string }) => (
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 80 652 625" width={40} height={80} {...props}>
+    <title>{title}</title>
     <path
       id="Path"
       fill="#fffefe"

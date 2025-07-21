@@ -7,8 +7,7 @@ import { storybookTest } from '@storybook/addon-vitest/vitest-plugin';
 import react from '@vitejs/plugin-react';
 import { defineConfig } from 'vite';
 
-const dirname =
-  typeof __dirname !== 'undefined' ? __dirname : path.dirname(fileURLToPath(import.meta.url));
+const dirname = path.dirname(fileURLToPath(import.meta.url));
 
 // More info at: https://storybook.js.org/docs/next/writing-tests/integrations/vitest-addon
 export default defineConfig({
@@ -16,9 +15,9 @@ export default defineConfig({
   plugins: [react()],
   resolve: {
     alias: {
-      '@assets': path.resolve(__dirname, 'src/assets'),
-      '@components': path.resolve(__dirname, 'src/components'),
-      '@layouts': path.resolve(__dirname, 'src/layouts'),
+      '@assets': path.resolve(dirname, 'src/assets'),
+      '@components': path.resolve(dirname, 'src/components'),
+      '@layouts': path.resolve(dirname, 'src/layouts'),
     },
   },
   server: {

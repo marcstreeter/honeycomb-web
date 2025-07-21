@@ -33,7 +33,7 @@
   },
   "files": {
     "ignoreUnknown": false,
-    "includes": ["**/*.{js,jsx,ts,tsx,json,css,md}"]
+    "includes": ["**/*.{js,jsx,ts,tsx,json,css,md}", "!dist/**", "!node_modules/**"]
   },
   "overrides": [
     {

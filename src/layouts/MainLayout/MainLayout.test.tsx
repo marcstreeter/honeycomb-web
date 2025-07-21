@@ -4,16 +4,7 @@ import MainLayout from './MainLayout';
 
 // Mock Header and Footer components
 vi.mock('./Header', () => ({
-  default: ({
-    handleMenuOpen,
-    handleMenuClose,
-    acAnchor,
-    setAcAnchor,
-    heatingAnchor,
-    setHeatingAnchor,
-    iaqAnchor,
-    setIaqAnchor,
-  }: any) => <header data-testid="header">Header Component</header>,
+  default: () => <header data-testid="header">Header Component</header>,
 }));
 
 vi.mock('./Footer', () => ({
