@@ -1,8 +1,9 @@
 import type React from 'react';
 // If you use Button or other shared components, import from @components/Button
-import ServiceAC from '../../assets/images/checking-unit.webp';
-import ServiceHeat from '../../assets/images/discussing-job.webp';
-import ServiceIAQ from '../../assets/images/testimonial-head-shot-b.webp';
+import ServiceAC from '../../assets/images/img-air-conditioning-repair.webp';
+import ServiceIAQ from '../../assets/images/img-changing-filter.webp';
+import ServiceHeat from '../../assets/images/img-repairing-heater.webp';
+import Image from './components/Image';
 import styles from './ServicesSection.module.css';
 
 const ServicesSection: React.FC = () => (
@@ -15,22 +16,58 @@ const ServicesSection: React.FC = () => (
       </p>
       <div className={`${styles['services-grid']}`}>
         <div className={`${styles['service-card']}`}>
-          <div className={`${styles['service-image']}`}>
-            <img src={ServiceAC} alt="AC Technician" />
-          </div>
-          <h3>AIR CONDITIONING</h3>
+          <Image
+            src={ServiceAC}
+            alt="AC Technician"
+            dimensionX={400}
+            dimensionY={400}
+            overlay={{
+              text: <h3>AIR CONDITIONING</h3>,
+              position: 'bottom',
+            }}
+            gradientOverlay={{
+              enabled: true,
+              color: 'var(--color-black)',
+              opacity: 0.5,
+              direction: 'bottom',
+            }}
+          />
         </div>
         <div className={`${styles['service-card']}`}>
-          <div className={`${styles['service-image']}`}>
-            <img src={ServiceHeat} alt="Heating Technician" />
-          </div>
-          <h3>HEATING</h3>
+          <Image
+            src={ServiceHeat}
+            alt="Heating Technician"
+            dimensionX={400}
+            dimensionY={400}
+            overlay={{
+              text: <h3>HEATING</h3>,
+              position: 'bottom',
+            }}
+            gradientOverlay={{
+              enabled: true,
+              color: 'var(--color-black)',
+              opacity: 0.5,
+              direction: 'bottom',
+            }}
+          />
         </div>
         <div className={`${styles['service-card']}`}>
-          <div className={`${styles['service-image']}`}>
-            <img src={ServiceIAQ} alt="Air Quality Technician" />
-          </div>
-          <h3>AIR QUALITY</h3>
+          <Image
+            src={ServiceIAQ}
+            alt="Air Quality Technician"
+            dimensionX={400}
+            dimensionY={400}
+            overlay={{
+              text: <h3>AIR QUALITY</h3>,
+              position: 'bottom',
+            }}
+            gradientOverlay={{
+              enabled: true,
+              color: 'var(--color-black)',
+              opacity: 0.5,
+              direction: 'bottom',
+            }}
+          />
         </div>
       </div>
       <div className={`${styles['carousel-dots']}`}>

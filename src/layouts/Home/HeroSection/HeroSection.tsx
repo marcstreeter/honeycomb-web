@@ -1,5 +1,6 @@
 import type React from 'react';
-import HeroImage from '../../../assets/images/video-placeholder.webp';
+import HeroImage from '../../../assets/images/img-video-placeholder.webp';
+import Image from '../components/Image';
 import GoogleReviewBadge from './GoogleReviewBadge';
 import HeroButtons from './HeroButtons';
 import HeroHeadline from './HeroHeadline';
@@ -18,7 +19,13 @@ const HeroSection: React.FC = () => (
         <HeroTestimonialCarousel />
       </div>
       <div className={`${styles['hero-image']}`}>
-        <img src={HeroImage} alt="Technicians in van" className={`${styles['hero-img']}`} />
+        <Image
+          src={HeroImage}
+          alt="Technicians in van"
+          className={`${styles['hero-img']}`}
+          dimensionX={650}
+          dimensionY={500}
+        />
       </div>
     </div>
   </section>

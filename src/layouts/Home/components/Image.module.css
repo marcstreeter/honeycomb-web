@@ -1,10 +1,107 @@
+/* Viewport container - defines the exact dimensions */
+.image-viewport {
+  position: relative;
+  overflow: hidden;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Actual image - fills viewport with cover behavior */
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+/* Placeholder for when no src is provided */
 .image-placeholder {
   width: 100%;
-  height: 400px;
+  height: 100%;
   background: linear-gradient(45deg, #ddd, #bbb);
-  border-radius: 15px;
   display: grid;
   place-items: center;
   color: #666;
   font-weight: bold;
+}
+
+/* Gradient overlay */
+.gradient-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Overlay container */
+.overlay {
+  position: absolute;
+  z-index: 2;
+  pointer-events: none;
+  color: white;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
+}
+
+/* Overlay positioning */
+.overlay-center {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.overlay-top {
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+}
+
+.overlay-bottom {
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+}
+
+/* Overlay content */
+.overlay-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.overlay-icon:last-child {
+  margin-bottom: 0;
+}
+
+.overlay-text {
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 1.4;
+  max-width: 300px;
+  word-wrap: break-word;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .overlay-text {
+    font-size: 14px;
+    max-width: 250px;
+  }
+
+  .overlay-top,
+  .overlay-bottom {
+    left: 20px;
+    right: 20px;
+    transform: none;
+    text-align: left;
+  }
 }
