@@ -59,7 +59,7 @@ const Image: React.FC<ImageProps> = ({
   return (
     <div className={`${styles['image-viewport']} ${className}`} style={viewportStyle}>
       {src ? (
-        <img src={src} alt={alt || ''} className={styles['image']} />
+        <img src={src} alt={alt || ''} className={styles.image} />
       ) : (
         <div className={styles['image-placeholder']}>{children}</div>
       )}
@@ -69,9 +69,7 @@ const Image: React.FC<ImageProps> = ({
       )}
 
       {overlay && (
-        <div
-          className={`${styles['overlay']} ${styles[`overlay-${overlay.position || 'center'}`]}`}
-        >
+        <div className={`${styles.overlay} ${styles[`overlay-${overlay.position || 'center'}`]}`}>
           {overlay.icon && <div className={styles['overlay-icon']}>{overlay.icon}</div>}
           {overlay.text && <div className={styles['overlay-text']}>{overlay.text}</div>}
         </div>

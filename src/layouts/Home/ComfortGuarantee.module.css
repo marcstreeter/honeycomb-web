@@ -6,9 +6,24 @@
 
 .comfort-guarantee .container {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 60px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
   align-items: center;
+}
+
+/* Responsive layout for tablets */
+@media (max-width: 1024px) {
+  .comfort-guarantee .container {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+}
+
+/* Responsive layout for mobile */
+@media (max-width: 768px) {
+  .comfort-guarantee .container {
+    gap: 20px;
+  }
 }
 
 .comfort-guarantee h2 {
