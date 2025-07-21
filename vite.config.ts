@@ -8,14 +8,19 @@ import react from '@vitejs/plugin-react';
 import { defineConfig } from 'vite';
 
 const dirname =
-  typeof __dirname !== 'undefined'
-    ? __dirname
-    : path.dirname(fileURLToPath(import.meta.url));
+  typeof __dirname !== 'undefined' ? __dirname : path.dirname(fileURLToPath(import.meta.url));
 
 // More info at: https://storybook.js.org/docs/next/writing-tests/integrations/vitest-addon
 export default defineConfig({
   base: '/honeycomb-web/', // Set base for GitHub Pages
   plugins: [react()],
+  resolve: {
+    alias: {
+      '@assets': path.resolve(__dirname, 'src/assets'),
+      '@components': path.resolve(__dirname, 'src/components'),
+      '@layouts': path.resolve(__dirname, 'src/layouts'),
+    },
+  },
   server: {
     port: 3000,
     host: '0.0.0.0', // Allow external connections (needed for Docker)

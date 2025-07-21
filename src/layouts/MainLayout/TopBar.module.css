@@ -1,0 +1,45 @@
+/* --- Top Bar Refined --- */
+.top-bar-refined {
+  background: var(--color-black);
+  color: var(--color-white);
+  font-size: 15px;
+  padding: 0;
+}
+.topbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 38px;
+}
+.topbar-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 500;
+}
+.topbar-icon {
+  height: 18px;
+  width: 18px;
+  filter: none;
+  fill: var(--color-yellow);
+  color: var(--color-yellow);
+  /* makes yellow pop for pin, adjust as needed */
+}
+.topbar-right {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+.topbar-link {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--color-white);
+  text-decoration: underline;
+  font-weight: 500;
+  font-size: 15px;
+  transition: color 0.2s;
+}
+.topbar-link:hover {
+  color: var(--color-yellow);
+}

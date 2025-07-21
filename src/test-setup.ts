@@ -4,7 +4,7 @@ import { vi } from 'vitest';
 // Mock window.matchMedia
 Object.defineProperty(window, 'matchMedia', {
   writable: true,
-  value: vi.fn().mockImplementation(query => ({
+  value: vi.fn().mockImplementation((query) => ({
     matches: false,
     media: query,
     onchange: null,
@@ -17,14 +17,16 @@ Object.defineProperty(window, 'matchMedia', {
 });
 
 // Mock ResizeObserver
-global.ResizeObserver = vi.fn().mockImplementation(() => ({
+// biome-ignore lint/suspicious/noExplicitAny: Window type extension for test mocking
+(window as any).ResizeObserver = vi.fn().mockImplementation(() => ({
   observe: vi.fn(),
   unobserve: vi.fn(),
   disconnect: vi.fn(),
 }));
 
 // Mock IntersectionObserver
-global.IntersectionObserver = vi.fn().mockImplementation(() => ({
+// biome-ignore lint/suspicious/noExplicitAny: Window type extension for test mocking
+(window as any).IntersectionObserver = vi.fn().mockImplementation(() => ({
   observe: vi.fn(),
   unobserve: vi.fn(),
   disconnect: vi.fn(),
@@ -33,6 +35,7 @@ global.IntersectionObserver = vi.fn().mockImplementation(() => ({
 // Suppress console errors in tests unless explicitly needed
 const originalError = console.error;
 beforeAll(() => {
+  // biome-ignore lint/suspicious/noExplicitAny: Console.error args can be of any type
   console.error = (...args: any[]) => {
     if (
       typeof args[0] === 'string' &&
@@ -46,4 +49,4 @@ beforeAll(() => {
 
 afterAll(() => {
   console.error = originalError;
-}); 
+});

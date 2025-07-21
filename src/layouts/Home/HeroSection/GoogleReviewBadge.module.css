@@ -1,0 +1,37 @@
+.google-review-badge {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.google-icon-circle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: var(--color-white);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+.google-icon-circle img {
+  width: 24px;
+  height: 24px;
+}
+.google-review-text {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--color-black);
+}
+.google-rating-number {
+  color: var(--color-blue);
+  font-weight: 700;
+  font-size: 20px;
+}
+.google-rating-count {
+  color: #666;
+  font-size: 15px;
+  font-weight: 400;
+}

@@ -23,16 +23,15 @@
     /* Path mapping */
     "baseUrl": ".",
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["src/*"],
+      "@assets/*": ["src/assets/*"],
+      "@components/*": ["src/components/*"],
+      "@layouts/*": ["src/layouts/*"]
     },
 
     /* Test types */
     "types": ["vitest/globals", "@testing-library/jest-dom"]
   },
-  "include": [
-    "src",
-    "vite.config.ts",
-    "vitest.config.ts"
-  ],
+  "include": ["src", "vite.config.ts", "vitest.config.ts"],
   "references": [{ "path": "./tsconfig.node.json" }]
-} 
+}

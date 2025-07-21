@@ -1,0 +1,79 @@
+/* Service Areas Section */
+.service-areas {
+  background: #fff;
+  padding: 80px 0;
+}
+
+.service-areas .container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.service-areas h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.service-areas p {
+  font-size: 1.1rem;
+  margin-bottom: 30px;
+  color: #666;
+}
+
+.areas-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+}
+
+.area-item {
+  font-weight: bold;
+  color: #333;
+  padding: 10px 0;
+}
+
+.map-container {
+  display: grid;
+  place-items: center;
+}
+
+.texas-map {
+  position: relative;
+  width: 100%;
+  height: 400px;
+}
+
+.map-placeholder {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, #ddd, #bbb);
+  border-radius: 15px;
+  display: grid;
+  place-items: center;
+  color: #666;
+  font-weight: bold;
+}
+
+.map-pin {
+  position: absolute;
+  top: 60%;
+  left: 30%;
+  font-size: 30px;
+  color: #ff0000;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}

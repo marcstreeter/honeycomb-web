@@ -1,0 +1,89 @@
+import MuiButton, { type ButtonProps as MuiButtonProps } from '@mui/material/Button';
+import React from 'react';
+
+interface ButtonProps extends MuiButtonProps {
+  icon?: React.ReactNode; // left icon
+  endIcon?: React.ReactNode; // right icon
+  iconColor?: string; // color for icons
+  children?: React.ReactNode;
+  className?: string;
+  href?: string;
+  bgColor?: string; // custom background color
+}
+
+const iconSx = {
+  display: 'flex',
+  alignItems: 'center',
+  fontSize: '1.3em',
+  marginRight: '0.5em',
+};
+const labelSx = {
+  display: 'flex',
+  alignItems: 'center',
+  whiteSpace: 'nowrap',
+};
+
+const Button: React.FC<ButtonProps> = ({
+  icon,
+  endIcon,
+  iconColor,
+  children,
+  className = '',
+  href,
+  bgColor,
+  style,
+  ...props
+}) => {
+  // Helper to clone icon with color if needed
+  const renderIcon = (iconNode: React.ReactNode, isStart: boolean) => {
+    if (React.isValidElement(iconNode)) {
+      // biome-ignore lint/suspicious/noExplicitAny: React element type casting requires any for generic props
+      const el = iconNode as React.ReactElement<any, any>;
+      return React.cloneElement(el, {
+        style: {
+          color: iconColor,
+          ...(el.props.style || {}),
+          ...(isStart ? iconSx : {}),
+        },
+      });
+    }
+    return iconNode;
+  };
+  const buttonSx = {
+    display: 'inline-flex',
+    alignItems: 'center',
+    gap: '12px',
+    background: bgColor || 'var(--color-blue)',
+    color: 'var(--color-white)',
+    border: 'none',
+    borderRadius: 0,
+    fontSize: '1rem',
+    fontWeight: 600,
+    padding: '.5em 1em',
+    cursor: 'pointer',
+    transition: 'background 0.2s',
+    boxShadow: 'none',
+    outline: 'none',
+    whiteSpace: 'nowrap',
+    '&:hover, &:focus': {
+      background: 'var(--color-dark-yellow)',
+      color: 'var(--color-black)',
+    },
+    ...style,
+  };
+  return (
+    <MuiButton
+      sx={buttonSx}
+      startIcon={icon ? renderIcon(icon, true) : undefined}
+      endIcon={endIcon ? renderIcon(endIcon, false) : undefined}
+      href={href}
+      component={href ? 'a' : 'button'}
+      className={className}
+      {...props}
+    >
+      <span style={labelSx as React.CSSProperties}>{children}</span>
+    </MuiButton>
+  );
+};
+
+export default Button;

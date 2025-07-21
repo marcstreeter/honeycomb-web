@@ -1,0 +1,56 @@
+/* Bottom CTA Section */
+.bottom-cta {
+  background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);
+  padding: 80px 0;
+  text-align: center;
+}
+
+.bottom-cta h2 {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  color: #333;
+}
+
+.cta-buttons {
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 20px;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+
+.phone-btn-large {
+  background-color: #0066cc;
+  color: #fff;
+  text-decoration: none;
+  padding: 15px 30px;
+  border-radius: 25px;
+  font-weight: bold;
+  font-size: 1.2rem;
+  transition: background-color 0.3s ease;
+}
+
+.phone-btn-large:hover {
+  background-color: #0052a3;
+}
+
+.schedule-btn-large {
+  background-color: #ffd700;
+  color: #000;
+  border: none;
+  padding: 15px 30px;
+  border-radius: 25px;
+  font-weight: bold;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.schedule-btn-large:hover {
+  background-color: #ffed4e;
+}
+
+.bee-mascot-large {
+  font-size: 80px;
+  animation: bounce 2s infinite;
+}
