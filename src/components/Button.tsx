@@ -1,7 +1,7 @@
 import MuiButton, { type ButtonProps as MuiButtonProps } from '@mui/material/Button';
 import React from 'react';
 
-interface ButtonProps extends MuiButtonProps {
+interface ButtonProps extends Omit<MuiButtonProps, 'color'> {
   icon?: React.ReactNode; // left icon
   endIcon?: React.ReactNode; // right icon
   iconColor?: string; // color for icons
@@ -10,7 +10,8 @@ interface ButtonProps extends MuiButtonProps {
   className?: string;
   href?: string;
   bgColor?: string; // custom background color
-  color?: string; // text color
+  textColor?: string; // custom text color
+  muiColor?: MuiButtonProps['color']; // MUI's original color prop
 }
 
 const iconSx = {
@@ -34,7 +35,8 @@ const Button: React.FC<ButtonProps> = ({
   className = '',
   href,
   bgColor,
-  color,
+  textColor,
+  muiColor,
   style,
   ...props
 }) => {
@@ -61,7 +63,7 @@ const Button: React.FC<ButtonProps> = ({
     alignItems: 'center',
     gap: '12px',
     background: bgColor || 'var(--color-blue)',
-    color: color || 'var(--color-white)',
+    color: textColor || 'var(--color-white)',
     border: 'none',
     borderRadius: 0,
     fontSize: '1rem',
@@ -86,6 +88,7 @@ const Button: React.FC<ButtonProps> = ({
       href={href}
       component={href ? 'a' : 'button'}
       className={className}
+      color={muiColor}
       {...props}
     >
       <span style={labelSx as React.CSSProperties}>{buttonContent}</span>

@@ -1,0 +1,9 @@
+.testimonials {
+  background:
+    url("../../assets/icons/mega-honeycomb-pattern.svg") center center no-repeat,
+    var(--color-dark-yellow);
+  background-size: 3000px, cover;
+  color: white;
+  padding: 80px;
+  position: relative;
+}

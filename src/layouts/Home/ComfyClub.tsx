@@ -25,7 +25,11 @@ const ComfyClub: React.FC = () => (
           <li>PRIORITY SERVICE</li>
           <li>NO SERVICE CALL FEES</li>
         </ul>
-        <Button bgColor="var(--color-yellow)" text="Get Started Today" color="var(--color-black)" />
+        <Button
+          bgColor="var(--color-yellow)"
+          text="Get Started Today"
+          textColor="var(--color-black)"
+        />
       </div>
     </div>
   </section>

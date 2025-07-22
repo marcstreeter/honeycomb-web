@@ -690,6 +690,7 @@ body {
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 30px;
   margin-bottom: 40px;
+  align-items: start;
 }
 
 .testimonial-card {

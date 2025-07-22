@@ -1,0 +1,11 @@
+/* Testimonials Logo Styles */
+.logo-container {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-svg {
+  display: block;
+  flex-shrink: 0;
+}

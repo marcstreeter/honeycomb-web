@@ -138,16 +138,16 @@ describe('Button', () => {
     expect(screen.getByText('Only text prop')).toBeInTheDocument();
   });
 
-  it('applies custom text color via color prop', () => {
-    render(<Button color="#ff0000" text="Red Text Button" />);
+  it('applies custom text color via textColor prop', () => {
+    render(<Button textColor="#ff0000" text="Red Text Button" />);
 
     const button = screen.getByTestId('mui-button');
     expect(button).toBeInTheDocument();
     expect(screen.getByText('Red Text Button')).toBeInTheDocument();
   });
 
-  it('renders with both text and color props', () => {
-    render(<Button text="Styled Text" color="#0000ff" bgColor="#ffff00" />);
+  it('renders with both text and textColor props', () => {
+    render(<Button text="Styled Text" textColor="#0000ff" bgColor="#ffff00" />);
 
     expect(screen.getByText('Styled Text')).toBeInTheDocument();
     const button = screen.getByTestId('mui-button');
