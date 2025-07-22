@@ -1,11 +1,20 @@
 import type React from 'react';
+import Icon from '../../assets/icons/Icon';
+import DiscussingJobImage from '../../assets/images/img-discussing-job.webp';
 import Button from '../../components/Button';
+import AboutPoint from './AboutPoint';
 import styles from './AboutSection.module.css';
 import Image from './components/Image';
 
 const AboutSection: React.FC = () => (
   <section className={`${styles.about}`}>
     <div className={`${styles.container}`}>
+      <Image
+        src={DiscussingJobImage}
+        alt="Technicians Discussing Job"
+        dimensionX={500}
+        dimensionY={600}
+      />
       <div className={`${styles['about-content']}`}>
         <h2>ABOUT HONEYCOMB HEATING & COOLING</h2>
         <p>
@@ -14,13 +23,12 @@ const AboutSection: React.FC = () => (
           every job is completed to the highest standards.
         </p>
         <div className={`${styles['about-points']}`}>
-          <div className={`${styles.point}`}>20+ YEARS OF EXPERIENCE</div>
-          <div className={`${styles.point}`}>TAILORED SOLUTIONS</div>
-          <div className={`${styles.point}`}>WE CARE FOR OUR COMMUNITY</div>
+          <AboutPoint label="20+ YEARS OF EXPERIENCE" icon={<Icon iconKey="truck-facing" />} />
+          <AboutPoint label="TAILORED SOLUTIONS" icon={<Icon iconKey="wrench" />} />
+          <AboutPoint label="WE CARE FOR OUR COMMUNITY" icon={<Icon iconKey="shield-check" />} />
         </div>
         <Button>More About Us</Button>
       </div>
-      <Image>Technicians Walking</Image>
     </div>
   </section>
 );

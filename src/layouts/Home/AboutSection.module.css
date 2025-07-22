@@ -5,10 +5,41 @@
 }
 
 .about .container {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 60px;
+  display: flex;
+  justify-content: center;
   align-items: center;
+  gap: 60px;
+  max-width: 1120px; /* 2 * 500px + 60px gap */
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.about .container > * {
+  width: 500px;
+  flex-shrink: 0;
+}
+
+/* Responsive layout - stack columns when too narrow */
+@media (max-width: 1120px) {
+  .about .container {
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    max-width: 500px;
+  }
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .about .container {
+    gap: 30px;
+    padding: 0 10px;
+  }
+
+  .about .container > * {
+    width: 100%;
+    max-width: 500px;
+  }
 }
 
 .about h2 {
@@ -27,13 +58,6 @@
   display: grid;
   gap: 15px;
   margin-bottom: 30px;
-}
-
-.point {
-  font-weight: bold;
-  color: #333;
-  padding: 10px 0;
-  border-bottom: 2px solid #ffd700;
 }
 
 .more-about-btn {
