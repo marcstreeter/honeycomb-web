@@ -6,9 +6,11 @@ interface ButtonProps extends MuiButtonProps {
   endIcon?: React.ReactNode; // right icon
   iconColor?: string; // color for icons
   children?: React.ReactNode;
+  text?: string; // alternative way to provide button text
   className?: string;
   href?: string;
   bgColor?: string; // custom background color
+  color?: string; // text color
 }
 
 const iconSx = {
@@ -28,9 +30,11 @@ const Button: React.FC<ButtonProps> = ({
   endIcon,
   iconColor,
   children,
+  text,
   className = '',
   href,
   bgColor,
+  color,
   style,
   ...props
 }) => {
@@ -49,12 +53,15 @@ const Button: React.FC<ButtonProps> = ({
     }
     return iconNode;
   };
+  // Determine button text content - prioritize children over text prop
+  const buttonContent = children || text;
+
   const buttonSx = {
     display: 'inline-flex',
     alignItems: 'center',
     gap: '12px',
     background: bgColor || 'var(--color-blue)',
-    color: 'var(--color-white)',
+    color: color || 'var(--color-white)',
     border: 'none',
     borderRadius: 0,
     fontSize: '1rem',
@@ -81,7 +88,7 @@ const Button: React.FC<ButtonProps> = ({
       className={className}
       {...props}
     >
-      <span style={labelSx as React.CSSProperties}>{children}</span>
+      <span style={labelSx as React.CSSProperties}>{buttonContent}</span>
     </MuiButton>
   );
 };

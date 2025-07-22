@@ -100,14 +100,13 @@ describe('Button', () => {
 
   it('passes through MUI Button props', () => {
     render(
-      <Button variant="contained" color="primary" disabled>
+      <Button variant="contained" disabled>
         MUI Props
       </Button>
     );
 
     const button = screen.getByTestId('mui-button');
     expect(button).toHaveAttribute('variant', 'contained');
-    expect(button).toHaveAttribute('color', 'primary');
     expect(button).toHaveAttribute('disabled');
   });
 
@@ -121,5 +120,49 @@ describe('Button', () => {
     );
 
     expect(screen.getByTestId('colored-icon')).toBeInTheDocument();
+  });
+
+  it('renders text from text prop', () => {
+    render(<Button text="Text Prop Button" />);
+    expect(screen.getByText('Text Prop Button')).toBeInTheDocument();
+  });
+
+  it('prioritizes children over text prop', () => {
+    render(<Button text="This won't show">This will show</Button>);
+    expect(screen.getByText('This will show')).toBeInTheDocument();
+    expect(screen.queryByText("This won't show")).not.toBeInTheDocument();
+  });
+
+  it('renders with text prop when no children provided', () => {
+    render(<Button text="Only text prop" />);
+    expect(screen.getByText('Only text prop')).toBeInTheDocument();
+  });
+
+  it('applies custom text color via color prop', () => {
+    render(<Button color="#ff0000" text="Red Text Button" />);
+
+    const button = screen.getByTestId('mui-button');
+    expect(button).toBeInTheDocument();
+    expect(screen.getByText('Red Text Button')).toBeInTheDocument();
+  });
+
+  it('renders with both text and color props', () => {
+    render(<Button text="Styled Text" color="#0000ff" bgColor="#ffff00" />);
+
+    expect(screen.getByText('Styled Text')).toBeInTheDocument();
+    const button = screen.getByTestId('mui-button');
+    expect(button).toBeInTheDocument();
+  });
+
+  it('handles empty text prop gracefully', () => {
+    render(<Button text="" />);
+
+    const button = screen.getByTestId('mui-button');
+    expect(button).toBeInTheDocument();
+  });
+
+  it('renders children with text prop fallback when children is null', () => {
+    render(<Button text="Fallback text">{null}</Button>);
+    expect(screen.getByText('Fallback text')).toBeInTheDocument();
   });
 });

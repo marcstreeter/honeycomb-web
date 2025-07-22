@@ -1,15 +1,46 @@
 /* Comfy Club Section */
 .comfy-club {
-  background-color: #0066cc;
+  background-color: var(--color-blue);
   color: #fff;
   padding: 80px 0;
 }
 
 .comfy-club .container {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 60px;
+  display: flex;
+  justify-content: center;
   align-items: center;
+  gap: 60px;
+  max-width: 1120px; /* 2 * 500px + 60px gap */
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.comfy-club .container > * {
+  width: 500px;
+  flex-shrink: 0;
+}
+
+/* Responsive layout - stack columns when too narrow */
+@media (max-width: 1120px) {
+  .comfy-club .container {
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    max-width: 500px;
+  }
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .comfy-club .container {
+    gap: 30px;
+    padding: 0 10px;
+  }
+
+  .comfy-club .container > * {
+    width: 100%;
+    max-width: 500px;
+  }
 }
 
 .comfy-club h2 {
@@ -28,19 +59,33 @@
 }
 
 .benefits-list li {
-  padding: 10px 0;
+  padding: 15px 0;
   font-weight: bold;
   position: relative;
-  padding-left: 30px;
+  padding-left: 40px;
+  border-bottom: 1px dashed white;
+}
+
+.benefits-list li:last-child {
+  border-bottom: none;
 }
 
 .benefits-list li::before {
   content: "✓";
   position: absolute;
   left: 0;
-  color: #ffd700;
+  top: 50%;
+  transform: translateY(-50%);
+  color: black;
   font-weight: bold;
-  font-size: 1.2rem;
+  font-size: 1rem;
+  width: 24px;
+  height: 24px;
+  background-color: var(--color-yellow);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .get-started-btn {
