@@ -21,6 +21,8 @@ interface ImageProps {
     direction?: 'top' | 'bottom' | 'left' | 'right';
   };
   className?: string;
+  responsive?: boolean;
+  maxWidth?: string | number;
 }
 
 const Image: React.FC<ImageProps> = ({
@@ -32,11 +34,35 @@ const Image: React.FC<ImageProps> = ({
   overlay,
   gradientOverlay,
   className = '',
+  responsive = true,
+  maxWidth = '100vw',
 }) => {
-  const viewportStyle: React.CSSProperties = {
-    width: typeof dimensionX === 'number' ? `${dimensionX}px` : dimensionX,
-    height: typeof dimensionY === 'number' ? `${dimensionY}px` : dimensionY,
+  const getResponsiveStyle = (): React.CSSProperties => {
+    const baseWidth = typeof dimensionX === 'number' ? `${dimensionX}px` : dimensionX;
+    const baseHeight = typeof dimensionY === 'number' ? `${dimensionY}px` : dimensionY;
+
+    if (!responsive) {
+      return {
+        width: baseWidth,
+        height: baseHeight,
+      };
+    }
+
+    // Calculate aspect ratio from dimensions
+    const aspectRatio =
+      typeof dimensionX === 'number' && typeof dimensionY === 'number'
+        ? dimensionX / dimensionY
+        : null;
+
+    return {
+      width: baseWidth,
+      height: baseHeight,
+      maxWidth: typeof maxWidth === 'number' ? `${maxWidth}px` : maxWidth,
+      aspectRatio: aspectRatio ? aspectRatio.toString() : undefined,
+    };
   };
+
+  const viewportStyle = getResponsiveStyle();
 
   const gradientStyle = gradientOverlay?.enabled
     ? {
@@ -57,7 +83,10 @@ const Image: React.FC<ImageProps> = ({
     : {};
 
   return (
-    <div className={`${styles['image-viewport']} ${className}`} style={viewportStyle}>
+    <div
+      className={`${styles['image-viewport']} ${responsive ? styles['image-viewport-responsive'] : ''} ${className}`}
+      style={viewportStyle}
+    >
       {src ? (
         <img src={src} alt={alt || ''} className={styles.image} />
       ) : (
