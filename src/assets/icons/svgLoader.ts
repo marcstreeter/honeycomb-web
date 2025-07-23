@@ -2,6 +2,7 @@
 
 // Available icon keys based on files that start with "icon-"
 export type IconKey =
+  | 'phone'
   | 'calendar'
   | 'chevron-down-yellow'
   | 'chevron-left'

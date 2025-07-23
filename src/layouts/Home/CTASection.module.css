@@ -1,21 +1,50 @@
 /* Bottom CTA Section */
 .bottom-cta {
-  background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);
+  background:
+    url("../../assets/icons/mega-honeycomb-pattern.svg") center center no-repeat,
+    var(--color-dark-yellow);
   padding: 80px 0;
-  text-align: center;
+  border-bottom: 20px solid var(--color-dark-yellow);
 }
 
-.bottom-cta h2 {
-  font-size: 2.5rem;
+.container {
+  display: flex;
+  gap: 60px;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.content {
+  flex: 1;
+  text-align: center;
+  min-width: 400px;
+}
+
+.mascot-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 200px;
+}
+
+.content h2 {
+  font-size: 3.5rem;
   margin-bottom: 40px;
-  color: #333;
+  color: var(--color-black);
+  font-weight: 1000;
+  text-align: left;
 }
 
 .cta-buttons {
   display: grid;
   grid-template-columns: auto auto;
   gap: 20px;
-  justify-content: center;
+  justify-content: left;
   margin-bottom: 40px;
 }
 
