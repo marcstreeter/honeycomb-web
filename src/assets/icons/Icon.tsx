@@ -33,7 +33,7 @@ const Icon: React.FC<SVGIconProps> = ({
   style = {},
 }) => {
   const [svgContent, setSvgContent] = useState<string>('');
-  const [parsedViewBox, setParsedViewBox] = useState<string>('');
+  const [parsedViewBox, setParsedViewBox] = useState<string>('0 0 24 24');
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 

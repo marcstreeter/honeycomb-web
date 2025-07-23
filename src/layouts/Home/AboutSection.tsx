@@ -23,9 +23,18 @@ const AboutSection: React.FC = () => (
           every job is completed to the highest standards.
         </p>
         <div className={`${styles['about-points']}`}>
-          <AboutPoint label="20+ YEARS OF EXPERIENCE" icon={<Icon iconKey="truck-facing" />} />
-          <AboutPoint label="TAILORED SOLUTIONS" icon={<Icon iconKey="wrench" />} />
-          <AboutPoint label="WE CARE FOR OUR COMMUNITY" icon={<Icon iconKey="shield-check" />} />
+          <AboutPoint
+            label="20+ Years of Experience"
+            icon={<Icon iconKey="truck-facing" fill="var(--color-red)" />}
+          />
+          <AboutPoint
+            label="Tailored Solutions"
+            icon={<Icon iconKey="wrench" fill="var(--color-red)" />}
+          />
+          <AboutPoint
+            label="We care four our community"
+            icon={<Icon iconKey="shield-check" fill="var(--color-red)" />}
+          />
         </div>
         <Button>More About Us</Button>
       </div>
