@@ -6,10 +6,8 @@ import styles from './HeroButtons.module.css';
 
 const HeroButtons: React.FC = () => (
   <div className={`${styles['hero-buttons']}`}>
-    <Button icon={<PhoneIcon />} href="tel:210-404-3209">
-      (210) 405-3291
-    </Button>
-    <Button icon={<CalendarIcon />} href="#schedule" bgColor="var(--color-black)">
+    <Button icon={<PhoneIcon />} href="tel:210-404-3209" text="(210) 405-3291" />
+    <Button icon={<CalendarIcon />} href="#schedule" bgColor="var(--color-red)">
       Schedule Service
     </Button>
   </div>
