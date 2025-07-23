@@ -1216,6 +1216,13 @@ body {
   grid-template-rows: auto min-content auto;
   row-gap: 0;
   position: relative;
+  background: linear-gradient(
+    180deg,
+    var(--color-yellow) 0%,
+    var(--color-yellow) 45%,
+    var(--color-blue) 50%,
+    var(--color-blue) 100%
+  );
 }
 
 .key-differentiators {
