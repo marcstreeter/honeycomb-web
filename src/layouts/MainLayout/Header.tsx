@@ -26,7 +26,7 @@ const Header: React.FC<HeaderProps> = ({
   handleMenuOpen,
   handleMenuClose,
 }) => (
-  <header>
+  <header style={{ padding: '10px 20px 0 20px', background: 'var(--color-black)' }}>
     <TopBar />
     <Nav
       acAnchor={acAnchor}

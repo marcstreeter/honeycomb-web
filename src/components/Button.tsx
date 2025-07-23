@@ -94,7 +94,7 @@ const Button: React.FC<ButtonProps> = ({
       color={muiColor}
       {...props}
     >
-      <span style={labelSx as React.CSSProperties}>{buttonContent}</span>
+      {buttonContent && <span style={labelSx as React.CSSProperties}>{buttonContent}</span>}
     </MuiButton>
   );
 };

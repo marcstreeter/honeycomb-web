@@ -2,12 +2,12 @@
   display: flex;
   align-items: center;
   gap: 18px;
-  background: var(--color-white);
+  background: var(--color-yellow);
   border-radius: 12px;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.07);
   padding: 18px 24px;
   min-height: 90px;
   margin-top: 8px;
+  border: 1px dashed var(--color-black);
 }
 
 .carousel-chevron {
@@ -38,4 +38,26 @@
   font-weight: 700;
   color: var(--color-black);
   font-size: 1rem;
+}
+
+.carousel-button {
+  border-radius: 50% !important;
+  width: 40px !important;
+  height: 40px !important;
+  min-width: 40px !important;
+  padding: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.carousel-button:hover svg,
+.carousel-button:focus svg {
+  fill: var(--color-white) !important;
+}
+
+.carousel-button:hover,
+.carousel-button:focus {
+  background: var(--color-yellow) !important;
+  color: var(--color-black) !important;
 }

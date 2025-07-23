@@ -1238,11 +1238,12 @@ body {
 .floating-card-row {
   display: flex;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
   z-index: 10;
   margin-top: -60px; /* Overlap amount, adjust as needed */
   margin-bottom: -60px;
   pointer-events: none;
+  width: 100%;
 }
 .floating-card-row > .key-differentiators {
   pointer-events: auto;

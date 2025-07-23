@@ -3,17 +3,18 @@ import styled from 'styled-components';
 import BadgeHonestIcon from '../../assets/icons/BadgeHonestIcon';
 import BadgeLicensedIcon from '../../assets/icons/BadgeLicensedIcon';
 import BadgeReliable from '../../assets/icons/BadgeReliableIcon';
-import Mascot from '../../assets/icons/mascot.svg';
+import MascotIcon from '../../assets/icons/MascotIcon';
 import HoneyIcon from '../../components/HoneyIcon';
 
 const FloatingCardRow = styled.div`
   display: flex;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
   z-index: 10;
   margin-top: -60px;
   margin-bottom: -60px;
   pointer-events: none;
+  width: 100%;
   & > * {
     pointer-events: auto;
   }
@@ -34,40 +35,8 @@ const FloatingCardRow = styled.div`
 const CardStack = styled.div`
   display: flex;
   justify-content: center;
-  width: 90%;
-`;
-
-const MascotContainer = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  overflow: visible;
-  @media (max-width: 768px) {
-    grid-column: 1 / -1;
-    margin-bottom: 20px;
-  }
-`;
-
-const BeeMascot = styled.img`
-  height: 220px;
-  width: auto;
-  z-index: 11;
-  pointer-events: none;
-  position: relative;
-  transform: translateY(-20px);
-  @media (max-width: 900px) {
-    height: 180px;
-    transform: translateY(-15px);
-  }
-  @media (max-width: 768px) {
-    height: 120px;
-    transform: translateY(-10px);
-  }
-  @media (max-width: 480px) {
-    height: 80px;
-    transform: translateY(-5px);
-  }
+  width: fit-content;
+  max-width: 90%;
 `;
 
 const KeyDifferentiatorsCard = styled.div`
@@ -75,7 +44,8 @@ const KeyDifferentiatorsCard = styled.div`
   border-radius: 20px;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
   padding: 40px;
-  width: 100%;
+  width: fit-content;
+  min-width: min-content;
   position: relative;
   border: 2px solid #ffd700;
   z-index: 10;
@@ -90,9 +60,8 @@ const KeyDifferentiatorsCard = styled.div`
 
 const DifferentiatorsGrid = styled.div`
   display: grid;
-  grid-template-columns: auto repeat(3, 1fr);
+  grid-template-columns: auto repeat(3, min-content);
   gap: 20px;
-  width: 100%;
   align-items: center;
   @media (max-width: 768px) {
     grid-template-columns: 1fr;
@@ -114,6 +83,7 @@ const DiffLabel = styled.span`
   font-weight: 900;
   color: #333;
   text-transform: uppercase;
+  white-space: nowrap;
   @media (max-width: 480px) {
     font-size: 11px;
   }
@@ -124,9 +94,7 @@ const KeyDifferentiators: React.FC = () => (
     <CardStack data-id="key-differentiators">
       <KeyDifferentiatorsCard data-id="key-differentiators-card">
         <DifferentiatorsGrid data-id="differentiators-grid">
-          <MascotContainer>
-            <BeeMascot src={Mascot} alt="Honeycomb Mascot" />
-          </MascotContainer>
+          <MascotIcon width={200} height={200} />
           <DiffItem>
             <HoneyIcon icon={<BadgeLicensedIcon />} />
             <DiffLabel>LICENSED & INSURED</DiffLabel>

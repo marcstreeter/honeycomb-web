@@ -16,6 +16,26 @@
   gap: 60px;
   align-items: center;
   padding-bottom: 0;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding: 40px 20px;
+  }
+
+  .hero .container {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    text-align: center;
+  }
+
+  .hero-content-grid {
+    max-width: 100%;
+  }
 }
 
 .hero-content-grid {
