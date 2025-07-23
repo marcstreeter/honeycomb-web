@@ -1,7 +1,8 @@
 import 'leaflet/dist/leaflet.css';
 import L from 'leaflet';
 import type React from 'react';
-import { MapContainer, Marker, Popup, TileLayer } from 'react-leaflet';
+import { useEffect, useRef } from 'react';
+import { MapContainer, Marker, Popup, TileLayer, useMap } from 'react-leaflet';
 
 // biome-ignore lint/suspicious/noExplicitAny: Leaflet type definition workaround to handle default markers
 delete (L.Icon.Default.prototype as any)._getIconUrl;
@@ -11,14 +12,14 @@ L.Icon.Default.mergeOptions({
   shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-shadow.png',
 });
 
-interface ServiceArea {
+export interface ServiceArea {
   name: string;
   lat: number;
   lng: number;
 }
 
 // San Antonio area service locations
-const serviceAreas: ServiceArea[] = [
+export const serviceAreas: ServiceArea[] = [
   { name: 'Downtown San Antonio', lat: 29.4241, lng: -98.4936 },
   { name: 'North San Antonio', lat: 29.5149, lng: -98.4951 },
   { name: 'West San Antonio', lat: 29.4497, lng: -98.6197 },
@@ -29,7 +30,66 @@ const serviceAreas: ServiceArea[] = [
   { name: 'Southtown', lat: 29.4046, lng: -98.4951 },
 ];
 
-const SanAntonioMap: React.FC = () => {
+// Individual marker component to handle popup control
+interface ServiceMarkerProps {
+  area: ServiceArea;
+  shouldOpenPopup: boolean;
+}
+
+const ServiceMarker: React.FC<ServiceMarkerProps> = ({ area, shouldOpenPopup }) => {
+  const markerRef = useRef<L.Marker>(null);
+
+  useEffect(() => {
+    if (shouldOpenPopup && markerRef.current) {
+      // Delay popup opening to allow map animation to complete
+      const timer = setTimeout(() => {
+        if (markerRef.current) {
+          markerRef.current.openPopup();
+        }
+      }, 1600);
+
+      return () => clearTimeout(timer);
+    }
+  }, [shouldOpenPopup]);
+
+  return (
+    <Marker key={area.name} position={[area.lat, area.lng]} ref={markerRef}>
+      <Popup>
+        <strong>{area.name}</strong>
+        <br />
+        HVAC Services Available
+      </Popup>
+    </Marker>
+  );
+};
+
+// Component to handle map focus changes
+interface MapFocusControllerProps {
+  focusedArea: string | null;
+}
+
+const MapFocusController: React.FC<MapFocusControllerProps> = ({ focusedArea }) => {
+  const map = useMap();
+
+  useEffect(() => {
+    if (focusedArea) {
+      const area = serviceAreas.find((a) => a.name === focusedArea);
+      if (area) {
+        map.flyTo([area.lat, area.lng], 13, {
+          duration: 1.5,
+        });
+      }
+    }
+  }, [focusedArea, map]);
+
+  return null;
+};
+
+interface ServiceAreasMapProps {
+  focusedArea?: string | null;
+}
+
+const ServiceAreasMap: React.FC<ServiceAreasMapProps> = ({ focusedArea = null }) => {
   // San Antonio coordinates
   const center: [number, number] = [29.4241, -98.4936];
 
@@ -45,17 +105,12 @@ const SanAntonioMap: React.FC = () => {
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
       />
+      <MapFocusController focusedArea={focusedArea} />
       {serviceAreas.map((area) => (
-        <Marker key={area.name} position={[area.lat, area.lng]}>
-          <Popup>
-            <strong>{area.name}</strong>
-            <br />
-            HVAC Services Available
-          </Popup>
-        </Marker>
+        <ServiceMarker key={area.name} area={area} shouldOpenPopup={focusedArea === area.name} />
       ))}
     </MapContainer>
   );
 };
 
-export default SanAntonioMap;
+export default ServiceAreasMap;
