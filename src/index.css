@@ -6,6 +6,8 @@
   --color-black: #000;
   --color-white: #fff;
   --color-red: #dc0505;
+
+  /* Borders */
   --border-radius: 15px;
 
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
