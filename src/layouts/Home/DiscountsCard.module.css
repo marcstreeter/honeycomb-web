@@ -1,0 +1,43 @@
+.discount-card {
+  background: var(--color-white);
+  color: #000;
+  border-radius: 15px;
+  width: 400px;
+  text-align: center;
+  transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.discount-card:hover {
+  transform: translateY(-5px);
+}
+
+.discount-card .logo {
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+.discount-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  font-weight: 1000;
+  text-transform: uppercase;
+}
+
+.discount-card p {
+  margin-bottom: 20px;
+  color: var(--color-black);
+}
+
+.discount-card .content {
+  background: var(--color-dark-yellow);
+  padding: 20px 20px 40px 20px;
+  border-bottom-left-radius: var(--border-radius);
+  border-bottom-right-radius: var(--border-radius);
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}

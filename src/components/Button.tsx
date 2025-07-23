@@ -61,6 +61,7 @@ const Button: React.FC<ButtonProps> = ({
   const buttonSx = {
     display: 'inline-flex',
     alignItems: 'center',
+    justifyContent: 'center',
     gap: '12px',
     background: bgColor || 'var(--color-blue)',
     color: textColor || 'var(--color-white)',
@@ -68,12 +69,14 @@ const Button: React.FC<ButtonProps> = ({
     borderRadius: 0,
     fontSize: '1rem',
     fontWeight: 600,
-    padding: '.5em 1em',
+    padding: '0.75em 1.5em',
     cursor: 'pointer',
     transition: 'background 0.2s',
     boxShadow: 'none',
     outline: 'none',
     whiteSpace: 'nowrap',
+    width: 'fit-content',
+    minWidth: 'auto',
     '&:hover, &:focus': {
       background: 'var(--color-dark-yellow)',
       color: 'var(--color-black)',
