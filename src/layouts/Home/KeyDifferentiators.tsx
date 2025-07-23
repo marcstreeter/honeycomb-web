@@ -59,14 +59,14 @@ const KeyDifferentiatorsCard = styled.div`
 `;
 
 const DifferentiatorsGrid = styled.div`
-  display: grid;
-  grid-template-columns: auto repeat(3, min-content);
+  display: flex;
+  flex-wrap: wrap;
   gap: 20px;
   align-items: center;
-  @media (max-width: 768px) {
-    grid-template-columns: 1fr;
+  justify-content: center;
+  @media (max-width: 600px) {
+    flex-direction: column;
     gap: 15px;
-    justify-items: center;
   }
 `;
 
@@ -76,6 +76,7 @@ const DiffItem = styled.div`
   align-items: center;
   text-align: center;
   gap: 10px;
+  flex-shrink: 0;
 `;
 
 const DiffLabel = styled.span`
