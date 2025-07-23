@@ -1,6 +1,6 @@
 import type React from 'react';
-import Icon from '../../assets/icons/Icon';
 import ServiceAreaItem from './ServiceAreaItem';
+import ServiceAreasMap from './ServiceAreasMap';
 import styles from './ServiceAreasSection.module.css';
 
 const ServiceAreasSection: React.FC = () => (
@@ -15,22 +15,19 @@ const ServiceAreasSection: React.FC = () => (
         </p>
         <h3>We focus on serving:</h3>
         <div className={`${styles['areas-list']}`}>
-          <ServiceAreaItem label="Service Area #1" />
-          <ServiceAreaItem label="Service Area #2" />
-          <ServiceAreaItem label="Service Area #3" />
-          <ServiceAreaItem label="Service Area #4" />
-          <ServiceAreaItem label="Service Area #5" />
-          <ServiceAreaItem label="Service Area #6" />
-          <ServiceAreaItem label="Service Area #7" />
-          <ServiceAreaItem label="Service Area #8" />
+          <ServiceAreaItem label="Downtown San Antonio" />
+          <ServiceAreaItem label="North San Antonio" />
+          <ServiceAreaItem label="West San Antonio" />
+          <ServiceAreaItem label="East San Antonio" />
+          <ServiceAreaItem label="Alamo Heights" />
+          <ServiceAreaItem label="Stone Oak" />
+          <ServiceAreaItem label="The Dominion" />
+          <ServiceAreaItem label="Southtown" />
         </div>
       </div>
       <div className={`${styles['map-container']}`}>
         <div className={`${styles['texas-map']}`}>
-          <div className={`${styles['map-placeholder']}`}>Texas Map</div>
-          <div className={`${styles['map-pin']}`}>
-            <Icon iconKey="gps-marker" fill="var(--color-red)" />
-          </div>
+          <ServiceAreasMap />
         </div>
       </div>
     </div>
