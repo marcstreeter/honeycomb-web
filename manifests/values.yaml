@@ -16,6 +16,11 @@ service:
     type: ClusterIP
     port: 3000
     targetPort: http
+  appExternal:
+    type: NodePort
+    port: 3000
+    targetPort: http
+    nodePort: 30080
   storybook:
     type: ClusterIP
     port: 6006

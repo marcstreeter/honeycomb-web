@@ -11,6 +11,16 @@ def get_env_var(key, default=""):
     """Get environment variable with priority: dotenv > system env > default"""
     return DOTENV.get(key, SYSENV.get(key, default))
 
+def get_wifi_ip():
+    wifi_result = str(local("networksetup -getinfo Wi-Fi | grep 'IP address:' | awk '{print $3}' | head -1 | tr -d '\n' || echo ''", quiet=True)).strip()
+    if wifi_result and '.' in wifi_result:
+        return wifi_result
+
+def get_ethernet_ip():
+    ipconfig_result = str(local("ipconfig getifaddr en0 | tr -d '\n' || echo ''", quiet=True)).strip()
+    if ipconfig_result and '.' in ipconfig_result:
+        return ipconfig_result
+
 # BUILD
 docker_build(
     'honeycomb-web-app',
@@ -45,6 +55,11 @@ k8s_resource(
     port_forwards=[
         port_forward(17300, 3000, name="honeycomb-web ui"),
         port_forward(17306, 6006, name="honeycomb-web storybook"),
+    ],
+    links=[
+        link("http://{}:30080".format(ip), "External URL ({})".format(ip))
+        for ip in [get_wifi_ip(), get_ethernet_ip()]
+        if ip
     ],
     resource_deps=[],
     labels=['frontend'],
