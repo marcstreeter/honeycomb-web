@@ -5,8 +5,7 @@ type OverlayPosition = 'center' | 'top' | 'bottom';
 
 interface ImageProps {
   children?: React.ReactNode;
-  dimensionX?: string | number;
-  dimensionY?: string | number;
+  aspectRatio?: number; // width / height ratio (e.g., 16/9 = 1.78)
   src?: string;
   alt?: string;
   overlay?: {
@@ -21,48 +20,20 @@ interface ImageProps {
     direction?: 'top' | 'bottom' | 'left' | 'right';
   };
   className?: string;
-  responsive?: boolean;
-  maxWidth?: string | number;
 }
 
 const Image: React.FC<ImageProps> = ({
   children,
-  dimensionX = '100%',
-  dimensionY = 400,
+  aspectRatio = 16 / 9, // Default 16:9 aspect ratio
   src,
   alt,
   overlay,
   gradientOverlay,
   className = '',
-  responsive = true,
-  maxWidth = '100vw',
 }) => {
-  const getResponsiveStyle = (): React.CSSProperties => {
-    const baseWidth = typeof dimensionX === 'number' ? `${dimensionX}px` : dimensionX;
-    const baseHeight = typeof dimensionY === 'number' ? `${dimensionY}px` : dimensionY;
-
-    if (!responsive) {
-      return {
-        width: baseWidth,
-        height: baseHeight,
-      };
-    }
-
-    // Calculate aspect ratio from dimensions
-    const aspectRatio =
-      typeof dimensionX === 'number' && typeof dimensionY === 'number'
-        ? dimensionX / dimensionY
-        : null;
-
-    return {
-      width: baseWidth,
-      height: baseHeight,
-      maxWidth: typeof maxWidth === 'number' ? `${maxWidth}px` : maxWidth,
-      aspectRatio: aspectRatio ? aspectRatio.toString() : undefined,
-    };
+  const containerStyle: React.CSSProperties = {
+    aspectRatio: aspectRatio.toString(),
   };
-
-  const viewportStyle = getResponsiveStyle();
 
   const gradientStyle = gradientOverlay?.enabled
     ? {
@@ -83,10 +54,7 @@ const Image: React.FC<ImageProps> = ({
     : {};
 
   return (
-    <div
-      className={`${styles['image-viewport']} ${responsive ? styles['image-viewport-responsive'] : ''} ${className}`}
-      style={viewportStyle}
-    >
+    <div className={`${styles['image-viewport']} ${className}`} style={containerStyle}>
       {src ? (
         <img src={src} alt={alt || ''} className={styles.image} />
       ) : (

@@ -19,12 +19,7 @@ const ComfortGuarantee: React.FC = () => (
         </p>
       </div>
       <div className={`${styles['comfort-team']}`}>
-        <Image
-          src={ComfortGuaranteeImage}
-          alt="Comfort Guarantee"
-          dimensionX={400}
-          dimensionY={500}
-        />
+        <Image src={ComfortGuaranteeImage} alt="Comfort Guarantee" aspectRatio={4 / 5} />
       </div>
       <div className={`${styles['stats-grid']}`}>
         <div className={`${styles['stat-item']}`}>

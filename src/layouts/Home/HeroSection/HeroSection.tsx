@@ -23,8 +23,7 @@ const HeroSection: React.FC = () => (
           src={HeroImage}
           alt="Technicians in van"
           className={`${styles['hero-img']}`}
-          dimensionX={650}
-          dimensionY={500}
+          aspectRatio={6 / 5}
         />
       </div>
     </div>

@@ -7,12 +7,7 @@ import Image from './components/Image';
 const ComfyClub: React.FC = () => (
   <section className={`${styles['comfy-club']}`}>
     <div className={`${styles.container}`}>
-      <Image
-        src={TechnicianWorkingImage}
-        alt="Technicians Working"
-        dimensionX={450}
-        dimensionY={450}
-      />
+      <Image src={TechnicianWorkingImage} alt="Technicians Working" aspectRatio={1} />
       <div className={`${styles['club-content']}`}>
         <h2>JOIN THE COMFY CLUB</h2>
         <p>

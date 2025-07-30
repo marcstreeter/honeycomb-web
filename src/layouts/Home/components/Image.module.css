@@ -1,4 +1,4 @@
-/* Viewport container - defines the exact dimensions */
+/* Viewport container - grows with parent and maintains aspect ratio */
 .image-viewport {
   position: relative;
   overflow: hidden;
@@ -6,13 +6,14 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 100%;
+  height: auto;
 }
-
-/* Responsive viewport container */
 
 /* Actual image - fills viewport with cover behavior */
 .image {
   width: 100%;
+  height: 100%;
   object-fit: cover;
   object-position: center;
   display: block;
@@ -21,6 +22,7 @@
 /* Placeholder for when no src is provided */
 .image-placeholder {
   width: 100%;
+  height: 100%;
   background: linear-gradient(45deg, #ddd, #bbb);
   display: grid;
   place-items: center;
@@ -92,10 +94,6 @@
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
-  .image-viewport-responsive {
-    margin: 0 auto;
-  }
-
   .overlay-text {
     font-size: 14px;
     max-width: 250px;
@@ -111,8 +109,7 @@
 }
 
 @media (max-width: 480px) {
-  .image-viewport-responsive {
-    height: auto !important;
+  .image-viewport {
     border-radius: 10px;
   }
 

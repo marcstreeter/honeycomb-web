@@ -4,12 +4,15 @@
   padding: 80px 0;
 }
 
-.service-areas .container {
+.container {
   display: flex;
   flex-wrap: wrap;
   gap: 60px;
   align-items: center;
   justify-content: center;
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  padding-inline: var(--container-padding-inline);
 }
 
 .service-areas h2 {
@@ -79,5 +82,28 @@
   }
   100% {
     transform: scale(1);
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    gap: 40px;
+    padding-inline: var(--container-padding-inline-mobile);
+  }
+
+  .areas-content,
+  .map-container {
+    width: 100%;
+  }
+
+  .areas-list {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding-inline: var(--container-padding-inline-small);
   }
 }

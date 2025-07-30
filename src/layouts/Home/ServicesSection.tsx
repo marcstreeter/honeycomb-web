@@ -19,8 +19,7 @@ const ServicesSection: React.FC = () => (
           <Image
             src={ServiceAC}
             alt="AC Technician"
-            dimensionX={400}
-            dimensionY={400}
+            aspectRatio={1}
             overlay={{
               text: <h3>AIR CONDITIONING</h3>,
               position: 'bottom',
@@ -37,8 +36,7 @@ const ServicesSection: React.FC = () => (
           <Image
             src={ServiceHeat}
             alt="Heating Technician"
-            dimensionX={400}
-            dimensionY={400}
+            aspectRatio={1}
             overlay={{
               text: <h3>HEATING</h3>,
               position: 'bottom',
@@ -55,8 +53,7 @@ const ServicesSection: React.FC = () => (
           <Image
             src={ServiceIAQ}
             alt="Air Quality Technician"
-            dimensionX={400}
-            dimensionY={400}
+            aspectRatio={1}
             overlay={{
               text: <h3>AIR QUALITY</h3>,
               position: 'bottom',

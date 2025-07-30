@@ -9,12 +9,7 @@ import Image from './components/Image';
 const AboutSection: React.FC = () => (
   <section className={`${styles.about}`}>
     <div className={`${styles.container}`}>
-      <Image
-        src={DiscussingJobImage}
-        alt="Technicians Discussing Job"
-        dimensionX={500}
-        dimensionY={600}
-      />
+      <Image src={DiscussingJobImage} alt="Technicians Discussing Job" aspectRatio={5 / 6} />
       <div className={`${styles['about-content']}`}>
         <h2>ABOUT HONEYCOMB HEATING & COOLING</h2>
         <p>

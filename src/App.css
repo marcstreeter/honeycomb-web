@@ -4,6 +4,12 @@
   --color-blue: #10649c;
   --color-black: #000;
   --color-white: #fff;
+
+  /* Centralized Layout System */
+  --container-max-width: 1200px;
+  --container-padding-inline: 20px;
+  --container-padding-inline-mobile: 15px;
+  --container-padding-inline-small: 10px;
 }
 
 /* Reset and base styles */
@@ -20,10 +26,39 @@ body {
   background-color: var(--color-white);
 }
 
+/* Centralized Container System */
+.content-container {
+  max-width: var(--container-max-width);
+  margin-inline: auto;
+  width: 100%;
+  padding-inline: var(--container-padding-inline);
+}
+
+/* Legacy container for backward compatibility */
 .container {
-  max-width: 1200px;
+  max-width: var(--container-max-width);
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 var(--container-padding-inline);
+}
+
+@media (max-width: 768px) {
+  .content-container {
+    padding-inline: var(--container-padding-inline-mobile);
+  }
+
+  .container {
+    padding: 0 var(--container-padding-inline-mobile);
+  }
+}
+
+@media (max-width: 480px) {
+  .content-container {
+    padding-inline: var(--container-padding-inline-small);
+  }
+
+  .container {
+    padding: 0 var(--container-padding-inline-small);
+  }
 }
 
 /* Top Bar */
@@ -887,6 +922,9 @@ body {
   grid-template-columns: 1fr 1fr;
   gap: 60px;
   align-items: center;
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  padding-inline: var(--container-padding-inline);
 }
 
 .service-areas h2 {
@@ -1129,6 +1167,7 @@ body {
   .service-areas .container {
     grid-template-columns: 1fr;
     gap: 40px;
+    padding-inline: var(--container-padding-inline-mobile);
   }
 
   .stats-grid {
