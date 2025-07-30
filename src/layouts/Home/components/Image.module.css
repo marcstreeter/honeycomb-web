@@ -9,16 +9,10 @@
 }
 
 /* Responsive viewport container */
-.image-viewport-responsive {
-  width: 100% !important;
-  height: auto !important;
-  min-height: 200px;
-}
 
 /* Actual image - fills viewport with cover behavior */
 .image {
   width: 100%;
-  height: 100%;
   object-fit: cover;
   object-position: center;
   display: block;
@@ -27,7 +21,6 @@
 /* Placeholder for when no src is provided */
 .image-placeholder {
   width: 100%;
-  height: 100%;
   background: linear-gradient(45deg, #ddd, #bbb);
   display: grid;
   place-items: center;
@@ -100,10 +93,6 @@
 /* Responsive adjustments */
 @media (max-width: 768px) {
   .image-viewport-responsive {
-    width: 100vw !important;
-    max-width: calc(100vw - 40px) !important;
-    height: auto !important;
-    min-height: 250px;
     margin: 0 auto;
   }
 
@@ -123,10 +112,7 @@
 
 @media (max-width: 480px) {
   .image-viewport-responsive {
-    width: 100vw !important;
-    max-width: calc(100vw - 20px) !important;
     height: auto !important;
-    min-height: 200px;
     border-radius: 10px;
   }
 

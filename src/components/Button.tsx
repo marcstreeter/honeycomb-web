@@ -18,7 +18,6 @@ const iconSx = {
   display: 'flex',
   alignItems: 'center',
   fontSize: '1.3em',
-  marginRight: '0.5em',
 };
 const labelSx = {
   display: 'flex',
@@ -62,14 +61,14 @@ const Button: React.FC<ButtonProps> = ({
     display: 'inline-flex',
     alignItems: 'center',
     justifyContent: 'center',
-    gap: '12px',
+    gap: '0.5em',
     background: bgColor || 'var(--color-blue)',
     color: textColor || 'var(--color-white)',
     border: 'none',
     borderRadius: 0,
     fontSize: '1rem',
     fontWeight: 600,
-    padding: '0.75em 1.5em',
+    padding: '0.5em 0.5em 0.5em 0.5em',
     cursor: 'pointer',
     transition: 'background 0.2s',
     boxShadow: 'none',
@@ -85,7 +84,15 @@ const Button: React.FC<ButtonProps> = ({
   };
   return (
     <MuiButton
-      sx={buttonSx}
+      sx={{
+        ...buttonSx,
+        '& .MuiButton-startIcon': {
+          margin: '0',
+        },
+        '& .MuiButton-endIcon': {
+          margin: '0',
+        },
+      }}
       startIcon={icon ? renderIcon(icon, true) : undefined}
       endIcon={endIcon ? renderIcon(endIcon, false) : undefined}
       href={href}
