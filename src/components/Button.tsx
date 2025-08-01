@@ -10,6 +10,7 @@ interface ButtonProps extends Omit<MuiButtonProps, 'color'> {
   className?: string;
   href?: string;
   bgColor?: string; // custom background color
+  bgColorHover?: string; // custom background color on hover
   textColor?: string; // custom text color
   muiColor?: MuiButtonProps['color']; // MUI's original color prop
 }
@@ -35,6 +36,7 @@ const Button: React.FC<ButtonProps> = ({
   className = '',
   href,
   bgColor,
+  bgColorHover = 'var(--color-dark-yellow)',
   textColor,
   muiColor,
   style,
@@ -79,7 +81,7 @@ const Button: React.FC<ButtonProps> = ({
     minWidth: 'auto',
     textTransform: 'capitalize',
     '&:hover, &:focus': {
-      background: 'var(--color-dark-yellow)',
+      background: bgColorHover,
       color: 'var(--color-black)',
     },
     ...style,

@@ -1,6 +1,6 @@
 /* Service Areas Section */
 .service-areas {
-  background: #fff;
+  background: var(--color-white);
   padding: var(--container-padding-inline-all);
 }
 

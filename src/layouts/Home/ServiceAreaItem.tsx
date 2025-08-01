@@ -15,6 +15,7 @@ const ServiceAreaItem: React.FC<ServiceAreaItemProps> = ({ label, onClick }) => 
       <Button
         onClick={onClick}
         bgColor="transparent"
+        bgColorHover="transparent"
         textColor="var(--color-black)"
         className={styles['area-item']}
         icon={<Icon iconKey="gps-marker" fill="var(--color-red)" />}
