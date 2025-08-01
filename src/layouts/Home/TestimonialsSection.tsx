@@ -15,7 +15,7 @@ const TestimonialsSection: React.FC = () => (
       >
         What our customers say
       </h2>
-      <div className="testimonials-grid">
+      <div className={styles['testimonials-grid']}>
         <TestimonialsCard
           stars={5}
           logo="google"
@@ -35,7 +35,7 @@ const TestimonialsSection: React.FC = () => (
           customerName="Sam V."
         />
       </div>
-      <div className="review-buttons">
+      <div className={styles['review-buttons']}>
         <Button bgColor="var(--color-blue)" text="Read Reviews" textColor="var(--color-white)" />
         <Button bgColor="var(--color-black)" text="Leave a Review" textColor="var(--color-white)" />
       </div>

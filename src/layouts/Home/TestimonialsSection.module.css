@@ -6,4 +6,20 @@
   color: white;
   padding: 80px;
   position: relative;
+  border-top: 20px solid var(--color-dark-yellow);
+}
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  margin-bottom: 20px;
+  align-items: start;
+}
+
+.review-buttons {
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 20px;
+  justify-content: left;
 }
