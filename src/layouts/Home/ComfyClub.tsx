@@ -9,7 +9,7 @@ const ComfyClub: React.FC = () => (
     <div className={`${styles.container}`}>
       <Image src={TechnicianWorkingImage} alt="Technicians Working" aspectRatio={1} />
       <div className={`${styles['club-content']}`}>
-        <h2>JOIN THE COMFY CLUB</h2>
+        <h2>Join the Comfy Club</h2>
         <p>
           The Comfy Club - Honeycomb Heating & Cooling's exclusive membership designed to eliminate
           HVAC headaches and keep your home running like a dream in San Antonio, TX.

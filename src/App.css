@@ -58,12 +58,16 @@
   --line-height-relaxed: 1.6;
   --line-height-loose: 2;
 
-  /* Letter Spacing */
+  /* Letter Spacing use with transform: scaleY()*/
   --letter-spacing-tighter: -0.05em;
   --letter-spacing-tight: -0.025em;
   --letter-spacing-normal: 0;
   --letter-spacing-wide: 0.025em;
   --letter-spacing-wider: 0.05em;
+
+  /* Font Stretch */
+  --font-stretch-normal: 110%;
+  --font-stretch-expanded: 120%;
 }
 
 /* Reset and base styles */
@@ -137,10 +141,10 @@ h2,
   font-weight: var(--font-weight-black);
   line-height: var(--line-height-snug);
   letter-spacing: var(--letter-spacing-tight);
-  color: var(--color-black);
   margin: 0;
   text-transform: uppercase;
   margin-bottom: 40px;
+  transform: scaleY(var(--font-stretch-expanded));
 }
 
 h3,
