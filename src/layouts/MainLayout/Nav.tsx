@@ -97,27 +97,15 @@ const Nav: React.FC<NavProps> = ({
         <Collapse in={acOpen} timeout="auto" unmountOnExit>
           <List component="div" disablePadding>
             <ListItemButton sx={{ pl: 4 }} className={styles['drawer-subitem']}>
-              <ListItemIcon>
-                <Icon iconKey="wrench" className={styles['menu-icon']} />
-              </ListItemIcon>
               <ListItemText primary="AC Installation" />
             </ListItemButton>
             <ListItemButton sx={{ pl: 4 }} className={styles['drawer-subitem']}>
-              <ListItemIcon>
-                <Icon iconKey="wrench" className={styles['menu-icon']} />
-              </ListItemIcon>
               <ListItemText primary="AC Repair" />
             </ListItemButton>
             <ListItemButton sx={{ pl: 4 }} className={styles['drawer-subitem']}>
-              <ListItemIcon>
-                <Icon iconKey="wrench" className={styles['menu-icon']} />
-              </ListItemIcon>
               <ListItemText primary="AC Maintenance" />
             </ListItemButton>
             <ListItemButton sx={{ pl: 4 }} className={styles['drawer-subitem']}>
-              <ListItemIcon>
-                <Icon iconKey="wrench" className={styles['menu-icon']} />
-              </ListItemIcon>
               <ListItemText primary="Emergency AC Service" />
             </ListItemButton>
           </List>
@@ -136,26 +124,17 @@ const Nav: React.FC<NavProps> = ({
           <List component="div" disablePadding>
             <ListItemButton sx={{ pl: 4 }} className={styles['drawer-subitem']}>
               <ListItemIcon>
-                <Icon iconKey="wrench" className={styles['menu-icon']} />
+                <Icon iconKey="wrench" className={styles['menu-icon']} fill="var(--color-yellow)" />
               </ListItemIcon>
               <ListItemText primary="Furnace Installation" />
             </ListItemButton>
             <ListItemButton sx={{ pl: 4 }} className={styles['drawer-subitem']}>
-              <ListItemIcon>
-                <Icon iconKey="wrench" className={styles['menu-icon']} />
-              </ListItemIcon>
               <ListItemText primary="Furnace Repair" />
             </ListItemButton>
             <ListItemButton sx={{ pl: 4 }} className={styles['drawer-subitem']}>
-              <ListItemIcon>
-                <Icon iconKey="wrench" className={styles['menu-icon']} />
-              </ListItemIcon>
               <ListItemText primary="Heat Pump Services" />
             </ListItemButton>
             <ListItemButton sx={{ pl: 4 }} className={styles['drawer-subitem']}>
-              <ListItemIcon>
-                <Icon iconKey="wrench" className={styles['menu-icon']} />
-              </ListItemIcon>
               <ListItemText primary="Emergency Heating" />
             </ListItemButton>
           </List>
@@ -170,27 +149,15 @@ const Nav: React.FC<NavProps> = ({
         <Collapse in={iaqOpen} timeout="auto" unmountOnExit>
           <List component="div" disablePadding>
             <ListItemButton sx={{ pl: 4 }} className={styles['drawer-subitem']}>
-              <ListItemIcon>
-                <Icon iconKey="wrench" className={styles['menu-icon']} />
-              </ListItemIcon>
               <ListItemText primary="Air Purifiers" />
             </ListItemButton>
             <ListItemButton sx={{ pl: 4 }} className={styles['drawer-subitem']}>
-              <ListItemIcon>
-                <Icon iconKey="wrench" className={styles['menu-icon']} />
-              </ListItemIcon>
               <ListItemText primary="Humidifiers" />
             </ListItemButton>
             <ListItemButton sx={{ pl: 4 }} className={styles['drawer-subitem']}>
-              <ListItemIcon>
-                <Icon iconKey="wrench" className={styles['menu-icon']} />
-              </ListItemIcon>
               <ListItemText primary="Dehumidifiers" />
             </ListItemButton>
             <ListItemButton sx={{ pl: 4 }} className={styles['drawer-subitem']}>
-              <ListItemIcon>
-                <Icon iconKey="wrench" className={styles['menu-icon']} />
-              </ListItemIcon>
               <ListItemText primary="Air Duct Cleaning" />
             </ListItemButton>
           </List>
@@ -297,27 +264,15 @@ const Nav: React.FC<NavProps> = ({
                 }}
               >
                 <MenuItem onClick={() => handleMenuClose(setAcAnchor)}>
-                  <ListItemIcon>
-                    <Icon iconKey="wrench" className={`${styles['menu-icon']}`} />
-                  </ListItemIcon>
                   <ListItemText>AC Installation</ListItemText>
                 </MenuItem>
                 <MenuItem onClick={() => handleMenuClose(setAcAnchor)}>
-                  <ListItemIcon>
-                    <Icon iconKey="wrench" className={`${styles['menu-icon']}`} />
-                  </ListItemIcon>
                   <ListItemText>AC Repair</ListItemText>
                 </MenuItem>
                 <MenuItem onClick={() => handleMenuClose(setAcAnchor)}>
-                  <ListItemIcon>
-                    <Icon iconKey="wrench" className={`${styles['menu-icon']}`} />
-                  </ListItemIcon>
                   <ListItemText>AC Maintenance</ListItemText>
                 </MenuItem>
                 <MenuItem onClick={() => handleMenuClose(setAcAnchor)}>
-                  <ListItemIcon>
-                    <Icon iconKey="wrench" className={`${styles['menu-icon']}`} />
-                  </ListItemIcon>
                   <ListItemText>Emergency AC Service</ListItemText>
                 </MenuItem>
               </Menu>
@@ -343,27 +298,15 @@ const Nav: React.FC<NavProps> = ({
                 }}
               >
                 <MenuItem onClick={() => handleMenuClose(setHeatingAnchor)}>
-                  <ListItemIcon>
-                    <Icon iconKey="wrench" className={`${styles['menu-icon']}`} />
-                  </ListItemIcon>
                   <ListItemText>Furnace Installation</ListItemText>
                 </MenuItem>
                 <MenuItem onClick={() => handleMenuClose(setHeatingAnchor)}>
-                  <ListItemIcon>
-                    <Icon iconKey="wrench" className={`${styles['menu-icon']}`} />
-                  </ListItemIcon>
                   <ListItemText>Furnace Repair</ListItemText>
                 </MenuItem>
                 <MenuItem onClick={() => handleMenuClose(setHeatingAnchor)}>
-                  <ListItemIcon>
-                    <Icon iconKey="wrench" className={`${styles['menu-icon']}`} />
-                  </ListItemIcon>
                   <ListItemText>Heat Pump Services</ListItemText>
                 </MenuItem>
                 <MenuItem onClick={() => handleMenuClose(setHeatingAnchor)}>
-                  <ListItemIcon>
-                    <Icon iconKey="wrench" className={`${styles['menu-icon']}`} />
-                  </ListItemIcon>
                   <ListItemText>Emergency Heating</ListItemText>
                 </MenuItem>
               </Menu>
@@ -389,21 +332,12 @@ const Nav: React.FC<NavProps> = ({
                 }}
               >
                 <MenuItem onClick={() => handleMenuClose(setIaqAnchor)}>
-                  <ListItemIcon>
-                    <Icon iconKey="wrench" className={`${styles['menu-icon']}`} />
-                  </ListItemIcon>
                   <ListItemText>Air Purifiers</ListItemText>
                 </MenuItem>
                 <MenuItem onClick={() => handleMenuClose(setIaqAnchor)}>
-                  <ListItemIcon>
-                    <Icon iconKey="wrench" className={`${styles['menu-icon']}`} />
-                  </ListItemIcon>
                   <ListItemText>Humidifiers</ListItemText>
                 </MenuItem>
                 <MenuItem onClick={() => handleMenuClose(setIaqAnchor)}>
-                  <ListItemIcon>
-                    <Icon iconKey="wrench" className={`${styles['menu-icon']}`} />
-                  </ListItemIcon>
                   <ListItemText>Dehumidifiers</ListItemText>
                 </MenuItem>
                 <MenuItem onClick={() => handleMenuClose(setIaqAnchor)}>
