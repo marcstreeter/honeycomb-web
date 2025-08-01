@@ -1,7 +1,7 @@
 /* Service Areas Section */
 .service-areas {
   background: #fff;
-  padding: 80px 0;
+  padding: var(--container-padding-inline-all);
 }
 
 .container {
@@ -86,10 +86,13 @@
 }
 
 @media (max-width: 768px) {
+  .service-areas {
+    padding: var(--container-padding-inline-mobile-all);
+  }
+
   .container {
     flex-direction: column;
     gap: 40px;
-    padding-inline: var(--container-padding-inline-mobile);
   }
 
   .areas-content,
@@ -99,11 +102,5 @@
 
   .areas-list {
     grid-template-columns: 1fr;
-  }
-}
-
-@media (max-width: 480px) {
-  .container {
-    padding-inline: var(--container-padding-inline-small);
   }
 }

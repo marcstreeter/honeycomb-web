@@ -4,7 +4,7 @@
     var(--color-dark-yellow);
   background-size: 3000px, cover;
   color: white;
-  padding: 80px;
+  padding: var(--container-padding-inline-all);
   position: relative;
   border-top: 20px solid var(--color-dark-yellow);
 }
@@ -22,4 +22,10 @@
   grid-template-columns: auto auto;
   gap: 20px;
   justify-content: left;
+}
+
+@media (max-width: 768px) {
+  .testimonials {
+    padding: var(--container-padding-inline-mobile-all);
+  }
 }

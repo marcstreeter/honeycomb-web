@@ -1,7 +1,13 @@
 /* About Section */
 .about {
   background: #fff;
-  padding: 80px 0;
+  padding: var(--container-padding-inline-all);
+}
+
+@media (max-width: 768px) {
+  .about {
+    padding: var(--container-padding-inline-mobile-all);
+  }
 }
 
 .about .container {

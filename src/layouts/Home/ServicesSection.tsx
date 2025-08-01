@@ -9,7 +9,7 @@ import styles from './ServicesSection.module.css';
 const ServicesSection: React.FC = () => (
   <section className={`${styles.services}`}>
     <div className={`${styles.container}`}>
-      <h2>OUR SERVICES</h2>
+      <h2>Our Services</h2>
       <p>
         Whether you need new installations, repairs to reliable units, or thorough maintenance,
         we've got you covered.

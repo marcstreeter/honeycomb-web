@@ -3,7 +3,7 @@
   background:
     url("../../assets/icons/mega-honeycomb-pattern.svg") center center no-repeat,
     var(--color-dark-yellow);
-  padding: 80px 0;
+  padding: var(--container-padding-inline-all);
   border-bottom: 20px solid var(--color-dark-yellow);
 }
 
@@ -82,4 +82,10 @@
 .bee-mascot-large {
   font-size: 80px;
   animation: bounce 2s infinite;
+}
+
+@media (max-width: 768px) {
+  .bottom-cta {
+    padding: var(--container-padding-inline-mobile-all);
+  }
 }

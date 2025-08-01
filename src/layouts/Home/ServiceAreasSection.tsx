@@ -16,7 +16,7 @@ const ServiceAreasSection: React.FC = () => {
       <div className={`${styles.container}`}>
         <div className={`${styles['areas-content']}`}>
           <h4>Service Areas</h4>
-          <h2>COMMUNITIES WE PROUDLY SERVE</h2>
+          <h2>Communities We Proudly Serve</h2>
           <p>
             We provide comprehensive HVAC services throughout the greater San Antonio area and
             surrounding communities.

@@ -10,6 +10,10 @@
   --container-padding-inline: 20px;
   --container-padding-inline-mobile: 15px;
   --container-padding-inline-small: 10px;
+  --container-padding-inline-all: calc(var(--container-padding-inline) * 4)
+    var(--container-padding-inline);
+  --container-padding-inline-mobile-all: calc(var(--container-padding-inline-mobile) * 4)
+    var(--container-padding-inline-mobile);
 
   /* Centralized Font System */
   /* Font Families */

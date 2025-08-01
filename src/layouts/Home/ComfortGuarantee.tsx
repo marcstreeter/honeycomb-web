@@ -11,7 +11,7 @@ const ComfortGuarantee: React.FC = () => (
   <section className={`${styles['comfort-guarantee']}`}>
     <div className={`${styles.container}`}>
       <div className={`${styles['comfort-content']}`}>
-        <h2>HONEYCOMB GUARANTEES YOUR COMFORT</h2>
+        <h2>Honeycomb Guarantees Your Comfort</h2>
         <p>
           We are dedicated to providing exceptional HVAC services that ensure your comfort and peace
           of mind. Our team of experienced professionals is committed to delivering reliable,
