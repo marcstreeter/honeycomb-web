@@ -31,7 +31,7 @@
 }
 
 .discount-card .content {
-  background: var(--color-dark-yellow);
+  background: var(--color-yellow);
   padding: 20px 20px 40px 20px;
   border-bottom-left-radius: var(--border-radius);
   border-bottom-right-radius: var(--border-radius);
