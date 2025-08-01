@@ -5,7 +5,7 @@ import ComfyClub from './ComfyClub';
 import BottomCTASection from './CTASection';
 import DiscountsSection from './DiscountsSection';
 import HeroSection from './HeroSection';
-import KeyDifferentiators from './KeyDifferentiators';
+// import KeyDifferentiators from './KeyDifferentiators';
 import ServiceAreasSection from './ServiceAreasSection';
 import ServicesSection from './ServicesSection';
 import TestimonialsSection from './TestimonialsSection';
@@ -14,7 +14,7 @@ const HomeLayout: React.FC = () => (
   <>
     <div className="sections-wrapper-grid">
       <HeroSection />
-      <KeyDifferentiators />
+      {/* <KeyDifferentiators /> */}
       <ServicesSection />
     </div>
     <ComfortGuarantee />
