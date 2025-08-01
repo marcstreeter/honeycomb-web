@@ -17,7 +17,8 @@ interface ButtonProps extends Omit<MuiButtonProps, 'color'> {
 const iconSx = {
   display: 'flex',
   alignItems: 'center',
-  fontSize: '1.3em', // Keep relative sizing for icons
+  width: '1em',
+  height: '1em',
 };
 const labelSx = {
   display: 'flex',
@@ -68,7 +69,7 @@ const Button: React.FC<ButtonProps> = ({
     borderRadius: 0,
     fontSize: 'var(--font-size-button)',
     fontWeight: 'var(--font-weight-semibold)',
-    padding: '0.5em 0.5em 0.5em 0.5em',
+    padding: '0.75em 1em',
     cursor: 'pointer',
     transition: 'background 0.2s',
     boxShadow: 'none',
@@ -76,6 +77,7 @@ const Button: React.FC<ButtonProps> = ({
     whiteSpace: 'nowrap',
     width: 'fit-content',
     minWidth: 'auto',
+    textTransform: 'capitalize',
     '&:hover, &:focus': {
       background: 'var(--color-dark-yellow)',
       color: 'var(--color-black)',
