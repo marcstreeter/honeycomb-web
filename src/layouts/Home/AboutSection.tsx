@@ -11,11 +11,12 @@ const AboutSection: React.FC = () => (
     <div className={`${styles.container}`}>
       <Image src={DiscussingJobImage} alt="Technicians Discussing Job" aspectRatio={5 / 6} />
       <div className={`${styles['about-content']}`}>
-        <h2>ABOUT HONEYCOMB HEATING & COOLING</h2>
+        <h2>About Honeycomb Heating & Cooling</h2>
         <p>
-          We are committed to providing the highest quality HVAC services with integrity, honesty,
-          and dedication to customer satisfaction. Our team of certified technicians ensures that
-          every job is completed to the highest standards.
+          We believe in doing the right thing - every single time. Based in the heart of San
+          Antonio, we've built a reputation for providing reliable and trustworthy HVAC services
+          that truly stand out. Our dedication to integrity and quality has made us a cornerstone in
+          the communit, offering the golden standard in heating and cooling services.
         </p>
         <div className={`${styles['about-points']}`}>
           <AboutPoint
