@@ -43,3 +43,10 @@
 .topbar-link:hover {
   color: var(--color-yellow);
 }
+
+/* Hide topbar links on mobile (iPhone-sized screens) */
+@media (max-width: 480px) {
+  .topbar-right {
+    display: none;
+  }
+}

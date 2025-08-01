@@ -19,10 +19,8 @@ import {
 } from '@mui/material';
 import type React from 'react';
 import { useState } from 'react';
-import ChevronIcon from '../../assets/icons/ChevronIcon';
-import IconWrench from '../../assets/icons/icon-wrench.svg';
+import Icon from '../../assets/icons/Icon';
 import Logo from '../../assets/icons/logo.svg';
-import PhoneIcon from '../../assets/icons/PhoneIcon';
 import Button from '../../components/Button';
 import styles from './Nav.module.css';
 
@@ -101,25 +99,25 @@ const Nav: React.FC<NavProps> = ({
           <List component="div" disablePadding>
             <ListItemButton sx={{ pl: 4 }} className={styles['drawer-subitem']}>
               <ListItemIcon>
-                <img src={IconWrench} alt="" className={styles['menu-icon']} />
+                <Icon iconKey="wrench" className={styles['menu-icon']} />
               </ListItemIcon>
               <ListItemText primary="AC Installation" />
             </ListItemButton>
             <ListItemButton sx={{ pl: 4 }} className={styles['drawer-subitem']}>
               <ListItemIcon>
-                <img src={IconWrench} alt="" className={styles['menu-icon']} />
+                <Icon iconKey="wrench" className={styles['menu-icon']} />
               </ListItemIcon>
               <ListItemText primary="AC Repair" />
             </ListItemButton>
             <ListItemButton sx={{ pl: 4 }} className={styles['drawer-subitem']}>
               <ListItemIcon>
-                <img src={IconWrench} alt="" className={styles['menu-icon']} />
+                <Icon iconKey="wrench" className={styles['menu-icon']} />
               </ListItemIcon>
               <ListItemText primary="AC Maintenance" />
             </ListItemButton>
             <ListItemButton sx={{ pl: 4 }} className={styles['drawer-subitem']}>
               <ListItemIcon>
-                <img src={IconWrench} alt="" className={styles['menu-icon']} />
+                <Icon iconKey="wrench" className={styles['menu-icon']} />
               </ListItemIcon>
               <ListItemText primary="Emergency AC Service" />
             </ListItemButton>
@@ -139,25 +137,25 @@ const Nav: React.FC<NavProps> = ({
           <List component="div" disablePadding>
             <ListItemButton sx={{ pl: 4 }} className={styles['drawer-subitem']}>
               <ListItemIcon>
-                <img src={IconWrench} alt="" className={styles['menu-icon']} />
+                <Icon iconKey="wrench" className={styles['menu-icon']} />
               </ListItemIcon>
               <ListItemText primary="Furnace Installation" />
             </ListItemButton>
             <ListItemButton sx={{ pl: 4 }} className={styles['drawer-subitem']}>
               <ListItemIcon>
-                <img src={IconWrench} alt="" className={styles['menu-icon']} />
+                <Icon iconKey="wrench" className={styles['menu-icon']} />
               </ListItemIcon>
               <ListItemText primary="Furnace Repair" />
             </ListItemButton>
             <ListItemButton sx={{ pl: 4 }} className={styles['drawer-subitem']}>
               <ListItemIcon>
-                <img src={IconWrench} alt="" className={styles['menu-icon']} />
+                <Icon iconKey="wrench" className={styles['menu-icon']} />
               </ListItemIcon>
               <ListItemText primary="Heat Pump Services" />
             </ListItemButton>
             <ListItemButton sx={{ pl: 4 }} className={styles['drawer-subitem']}>
               <ListItemIcon>
-                <img src={IconWrench} alt="" className={styles['menu-icon']} />
+                <Icon iconKey="wrench" className={styles['menu-icon']} />
               </ListItemIcon>
               <ListItemText primary="Emergency Heating" />
             </ListItemButton>
@@ -174,25 +172,25 @@ const Nav: React.FC<NavProps> = ({
           <List component="div" disablePadding>
             <ListItemButton sx={{ pl: 4 }} className={styles['drawer-subitem']}>
               <ListItemIcon>
-                <img src={IconWrench} alt="" className={styles['menu-icon']} />
+                <Icon iconKey="wrench" className={styles['menu-icon']} />
               </ListItemIcon>
               <ListItemText primary="Air Purifiers" />
             </ListItemButton>
             <ListItemButton sx={{ pl: 4 }} className={styles['drawer-subitem']}>
               <ListItemIcon>
-                <img src={IconWrench} alt="" className={styles['menu-icon']} />
+                <Icon iconKey="wrench" className={styles['menu-icon']} />
               </ListItemIcon>
               <ListItemText primary="Humidifiers" />
             </ListItemButton>
             <ListItemButton sx={{ pl: 4 }} className={styles['drawer-subitem']}>
               <ListItemIcon>
-                <img src={IconWrench} alt="" className={styles['menu-icon']} />
+                <Icon iconKey="wrench" className={styles['menu-icon']} />
               </ListItemIcon>
               <ListItemText primary="Dehumidifiers" />
             </ListItemButton>
             <ListItemButton sx={{ pl: 4 }} className={styles['drawer-subitem']}>
               <ListItemIcon>
-                <img src={IconWrench} alt="" className={styles['menu-icon']} />
+                <Icon iconKey="wrench" className={styles['menu-icon']} />
               </ListItemIcon>
               <ListItemText primary="Air Duct Cleaning" />
             </ListItemButton>
@@ -215,9 +213,53 @@ const Nav: React.FC<NavProps> = ({
         <Divider sx={{ bgcolor: '#333', margin: '8px 0' }} />
 
         <ListItem disablePadding>
+          <ListItemButton
+            component="a"
+            href="#refer"
+            className={styles['drawer-item']}
+            onClick={handleDrawerClose}
+          >
+            <ListItemIcon>
+              <Icon iconKey="thumbs-up" className={styles['menu-icon']} fill="#ffd700" />
+            </ListItemIcon>
+            <ListItemText primary="Refer a Friend" />
+          </ListItemButton>
+        </ListItem>
+
+        <ListItem disablePadding>
+          <ListItemButton
+            component="a"
+            href="#membership"
+            className={styles['drawer-item']}
+            onClick={handleDrawerClose}
+          >
+            <ListItemIcon>
+              <Icon iconKey="tool-box" className={styles['menu-icon']} fill="#ffd700" />
+            </ListItemIcon>
+            <ListItemText primary="Membership Plans" />
+          </ListItemButton>
+        </ListItem>
+
+        <ListItem disablePadding>
+          <ListItemButton
+            component="a"
+            href="#schedule"
+            className={styles['drawer-item']}
+            onClick={handleDrawerClose}
+          >
+            <ListItemIcon>
+              <Icon iconKey="calendar" className={styles['menu-icon']} fill="#ffd700" />
+            </ListItemIcon>
+            <ListItemText primary="Schedule Online" />
+          </ListItemButton>
+        </ListItem>
+
+        <Divider sx={{ bgcolor: '#333', margin: '8px 0' }} />
+
+        <ListItem disablePadding>
           <ListItemButton component="a" href="tel:210-404-3209" className={styles['drawer-phone']}>
             <ListItemIcon>
-              <PhoneIcon />
+              <Icon iconKey="phone" fill="#ffd700" />
             </ListItemIcon>
             <ListItemText primary="(210) 404-3209" />
           </ListItemButton>
@@ -241,7 +283,7 @@ const Nav: React.FC<NavProps> = ({
                 className={`${styles['nav-dropdown-btn']}`}
                 onClick={(e) => handleMenuOpen(e, setAcAnchor)}
                 onMouseEnter={(e) => handleMenuHoverOpen(e, setAcAnchor)}
-                endIcon={<ChevronIcon className={`${styles['chevron-icon']}`} />}
+                endIcon={<Icon iconKey="chevron-down" className={`${styles['chevron-icon']}`} />}
                 aria-owns={acAnchor ? 'ac-menu' : undefined}
                 aria-haspopup="true"
               >
@@ -259,25 +301,25 @@ const Nav: React.FC<NavProps> = ({
               >
                 <MenuItem onClick={() => handleMenuClose(setAcAnchor)}>
                   <ListItemIcon>
-                    <img src={IconWrench} alt="" className={`${styles['menu-icon']}`} />
+                    <Icon iconKey="wrench" className={`${styles['menu-icon']}`} />
                   </ListItemIcon>
                   <ListItemText>AC Installation</ListItemText>
                 </MenuItem>
                 <MenuItem onClick={() => handleMenuClose(setAcAnchor)}>
                   <ListItemIcon>
-                    <img src={IconWrench} alt="" className={`${styles['menu-icon']}`} />
+                    <Icon iconKey="wrench" className={`${styles['menu-icon']}`} />
                   </ListItemIcon>
                   <ListItemText>AC Repair</ListItemText>
                 </MenuItem>
                 <MenuItem onClick={() => handleMenuClose(setAcAnchor)}>
                   <ListItemIcon>
-                    <img src={IconWrench} alt="" className={`${styles['menu-icon']}`} />
+                    <Icon iconKey="wrench" className={`${styles['menu-icon']}`} />
                   </ListItemIcon>
                   <ListItemText>AC Maintenance</ListItemText>
                 </MenuItem>
                 <MenuItem onClick={() => handleMenuClose(setAcAnchor)}>
                   <ListItemIcon>
-                    <img src={IconWrench} alt="" className={`${styles['menu-icon']}`} />
+                    <Icon iconKey="wrench" className={`${styles['menu-icon']}`} />
                   </ListItemIcon>
                   <ListItemText>Emergency AC Service</ListItemText>
                 </MenuItem>
@@ -287,7 +329,7 @@ const Nav: React.FC<NavProps> = ({
                 className={`${styles['nav-dropdown-btn']}`}
                 onClick={(e) => handleMenuOpen(e, setHeatingAnchor)}
                 onMouseEnter={(e) => handleMenuHoverOpen(e, setHeatingAnchor)}
-                endIcon={<ChevronIcon className={`${styles['chevron-icon']}`} />}
+                endIcon={<Icon iconKey="chevron-down" className={`${styles['chevron-icon']}`} />}
                 aria-owns={heatingAnchor ? 'heating-menu' : undefined}
                 aria-haspopup="true"
               >
@@ -305,25 +347,25 @@ const Nav: React.FC<NavProps> = ({
               >
                 <MenuItem onClick={() => handleMenuClose(setHeatingAnchor)}>
                   <ListItemIcon>
-                    <img src={IconWrench} alt="" className={`${styles['menu-icon']}`} />
+                    <Icon iconKey="wrench" className={`${styles['menu-icon']}`} />
                   </ListItemIcon>
                   <ListItemText>Furnace Installation</ListItemText>
                 </MenuItem>
                 <MenuItem onClick={() => handleMenuClose(setHeatingAnchor)}>
                   <ListItemIcon>
-                    <img src={IconWrench} alt="" className={`${styles['menu-icon']}`} />
+                    <Icon iconKey="wrench" className={`${styles['menu-icon']}`} />
                   </ListItemIcon>
                   <ListItemText>Furnace Repair</ListItemText>
                 </MenuItem>
                 <MenuItem onClick={() => handleMenuClose(setHeatingAnchor)}>
                   <ListItemIcon>
-                    <img src={IconWrench} alt="" className={`${styles['menu-icon']}`} />
+                    <Icon iconKey="wrench" className={`${styles['menu-icon']}`} />
                   </ListItemIcon>
                   <ListItemText>Heat Pump Services</ListItemText>
                 </MenuItem>
                 <MenuItem onClick={() => handleMenuClose(setHeatingAnchor)}>
                   <ListItemIcon>
-                    <img src={IconWrench} alt="" className={`${styles['menu-icon']}`} />
+                    <Icon iconKey="wrench" className={`${styles['menu-icon']}`} />
                   </ListItemIcon>
                   <ListItemText>Emergency Heating</ListItemText>
                 </MenuItem>
@@ -333,7 +375,7 @@ const Nav: React.FC<NavProps> = ({
                 className={`${styles['nav-dropdown-btn']}`}
                 onClick={(e) => handleMenuOpen(e, setIaqAnchor)}
                 onMouseEnter={(e) => handleMenuHoverOpen(e, setIaqAnchor)}
-                endIcon={<ChevronIcon className={`${styles['chevron-icon']}`} />}
+                endIcon={<Icon iconKey="chevron-down" className={`${styles['chevron-icon']}`} />}
                 aria-owns={iaqAnchor ? 'iaq-menu' : undefined}
                 aria-haspopup="true"
               >
@@ -351,25 +393,25 @@ const Nav: React.FC<NavProps> = ({
               >
                 <MenuItem onClick={() => handleMenuClose(setIaqAnchor)}>
                   <ListItemIcon>
-                    <img src={IconWrench} alt="" className={`${styles['menu-icon']}`} />
+                    <Icon iconKey="wrench" className={`${styles['menu-icon']}`} />
                   </ListItemIcon>
                   <ListItemText>Air Purifiers</ListItemText>
                 </MenuItem>
                 <MenuItem onClick={() => handleMenuClose(setIaqAnchor)}>
                   <ListItemIcon>
-                    <img src={IconWrench} alt="" className={`${styles['menu-icon']}`} />
+                    <Icon iconKey="wrench" className={`${styles['menu-icon']}`} />
                   </ListItemIcon>
                   <ListItemText>Humidifiers</ListItemText>
                 </MenuItem>
                 <MenuItem onClick={() => handleMenuClose(setIaqAnchor)}>
                   <ListItemIcon>
-                    <img src={IconWrench} alt="" className={`${styles['menu-icon']}`} />
+                    <Icon iconKey="wrench" className={`${styles['menu-icon']}`} />
                   </ListItemIcon>
                   <ListItemText>Dehumidifiers</ListItemText>
                 </MenuItem>
                 <MenuItem onClick={() => handleMenuClose(setIaqAnchor)}>
                   <ListItemIcon>
-                    <img src={IconWrench} alt="" className={`${styles['menu-icon']}`} />
+                    <Icon iconKey="wrench" className={`${styles['menu-icon']}`} />
                   </ListItemIcon>
                   <ListItemText>Air Duct Cleaning</ListItemText>
                 </MenuItem>
@@ -381,7 +423,7 @@ const Nav: React.FC<NavProps> = ({
             </div>
             <div className={`${styles['nav-actions-refined']}`}>
               <Button
-                icon={<PhoneIcon />}
+                icon={<Icon iconKey="phone" fill="currentColor" />}
                 bgColor="var(--color-red)"
                 href="tel:210-404-3209"
                 className={`${styles['phone-btn-refined']}`}
