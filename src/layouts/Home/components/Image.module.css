@@ -95,17 +95,16 @@
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
-  .overlay-text {
+  .overlay-text h3 {
     font-size: var(--font-size-body-small);
     max-width: 250px;
   }
 
   .overlay-top,
   .overlay-bottom {
-    left: 20px;
-    right: 20px;
-    transform: none;
-    text-align: left;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
   }
 }
 
@@ -114,14 +113,14 @@
     border-radius: 10px;
   }
 
-  .overlay-text {
+  .overlay-text h3 {
     font-size: var(--font-size-caption);
     max-width: 200px;
   }
 
   .overlay-top,
   .overlay-bottom {
-    left: 15px;
-    right: 15px;
+    left: 50%;
+    transform: translateX(-50%);
   }
 }
