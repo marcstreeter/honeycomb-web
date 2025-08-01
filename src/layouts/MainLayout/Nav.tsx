@@ -4,7 +4,6 @@ import ExpandMore from '@mui/icons-material/ExpandMore';
 import MenuIcon from '@mui/icons-material/Menu';
 import {
   Collapse,
-  Divider,
   Drawer,
   IconButton,
   List,
@@ -197,8 +196,6 @@ const Nav: React.FC<NavProps> = ({
           </List>
         </Collapse>
 
-        <Divider sx={{ bgcolor: '#333', margin: '8px 0' }} />
-
         <ListItem disablePadding>
           <ListItemButton
             component="a"
@@ -209,8 +206,6 @@ const Nav: React.FC<NavProps> = ({
             <ListItemText primary="Service Areas" />
           </ListItemButton>
         </ListItem>
-
-        <Divider sx={{ bgcolor: '#333', margin: '8px 0' }} />
 
         <ListItem disablePadding>
           <ListItemButton
@@ -254,12 +249,14 @@ const Nav: React.FC<NavProps> = ({
           </ListItemButton>
         </ListItem>
 
-        <Divider sx={{ bgcolor: '#333', margin: '8px 0' }} />
-
         <ListItem disablePadding>
-          <ListItemButton component="a" href="tel:210-404-3209" className={styles['drawer-phone']}>
+          <ListItemButton
+            component="a"
+            href="tel:210-404-3209"
+            className={styles['drawer-highlight']}
+          >
             <ListItemIcon>
-              <Icon iconKey="phone" fill="#ffd700" />
+              <Icon iconKey="phone" className={styles['menu-icon']} fill="#ffd700" />
             </ListItemIcon>
             <ListItemText primary="(210) 404-3209" />
           </ListItemButton>
