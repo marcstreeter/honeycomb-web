@@ -43,19 +43,10 @@
   }
 }
 
-.comfy-club h2 {
-  font-size: 2.5rem;
-  margin-bottom: 20px;
-}
-
-.comfy-club p {
-  font-size: 1.1rem;
-  margin-bottom: 30px;
-}
-
 .benefits-list {
   list-style: none;
   margin-bottom: 30px;
+  text-transform: uppercase;
 }
 
 .benefits-list li {

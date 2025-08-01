@@ -9,12 +9,8 @@ const TestimonialsSection: React.FC = () => (
     <div className="container">
       <h2
         style={{
-          textTransform: 'uppercase',
           color: 'var(--color-black)',
           textAlign: 'center',
-          fontSize: '5rem',
-          fontWeight: 'bold',
-          marginBottom: '40px',
         }}
       >
         What our customers say

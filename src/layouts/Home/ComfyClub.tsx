@@ -15,10 +15,10 @@ const ComfyClub: React.FC = () => (
           HVAC headaches and keep your home running like a dream in San Antonio, TX.
         </p>
         <ul className={`${styles['benefits-list']}`}>
-          <li>ANNUAL SYSTEM TUNE-UPS</li>
-          <li>DISCOUNTS ON REPAIRS</li>
-          <li>PRIORITY SERVICE</li>
-          <li>NO SERVICE CALL FEES</li>
+          <li>Annual System Tune-Ups</li>
+          <li>Discounts on Repairs</li>
+          <li>Priority Service</li>
+          <li>No Service Call Fees</li>
         </ul>
         <Button
           bgColor="var(--color-yellow)"

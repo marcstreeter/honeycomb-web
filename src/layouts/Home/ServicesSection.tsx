@@ -24,12 +24,7 @@ const ServicesSection: React.FC = () => (
               text: <h3>AIR CONDITIONING</h3>,
               position: 'bottom',
             }}
-            gradientOverlay={{
-              enabled: true,
-              color: 'var(--color-black)',
-              opacity: 0.5,
-              direction: 'bottom',
-            }}
+            gradientOverlay={{ enabled: true }}
           />
         </div>
         <div className={`${styles['service-card']}`}>
@@ -41,12 +36,7 @@ const ServicesSection: React.FC = () => (
               text: <h3>HEATING</h3>,
               position: 'bottom',
             }}
-            gradientOverlay={{
-              enabled: true,
-              color: 'var(--color-black)',
-              opacity: 0.5,
-              direction: 'bottom',
-            }}
+            gradientOverlay={{ enabled: true }}
           />
         </div>
         <div className={`${styles['service-card']}`}>
@@ -58,12 +48,7 @@ const ServicesSection: React.FC = () => (
               text: <h3>AIR QUALITY</h3>,
               position: 'bottom',
             }}
-            gradientOverlay={{
-              enabled: true,
-              color: 'var(--color-black)',
-              opacity: 0.5,
-              direction: 'bottom',
-            }}
+            gradientOverlay={{ enabled: true }}
           />
         </div>
       </div>

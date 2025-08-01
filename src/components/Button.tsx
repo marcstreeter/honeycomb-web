@@ -17,7 +17,7 @@ interface ButtonProps extends Omit<MuiButtonProps, 'color'> {
 const iconSx = {
   display: 'flex',
   alignItems: 'center',
-  fontSize: '1.3em',
+  fontSize: '1.3em', // Keep relative sizing for icons
 };
 const labelSx = {
   display: 'flex',
@@ -66,8 +66,8 @@ const Button: React.FC<ButtonProps> = ({
     color: textColor || 'var(--color-white)',
     border: 'none',
     borderRadius: 0,
-    fontSize: '1rem',
-    fontWeight: 600,
+    fontSize: 'var(--font-size-button)',
+    fontWeight: 'var(--font-weight-semibold)',
     padding: '0.5em 0.5em 0.5em 0.5em',
     cursor: 'pointer',
     transition: 'background 0.2s',

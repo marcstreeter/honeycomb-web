@@ -12,6 +12,7 @@ interface ImageProps {
     icon?: React.ReactNode;
     text?: React.ReactNode;
     position?: OverlayPosition;
+    color?: string;
   };
   gradientOverlay?: {
     enabled: boolean;
@@ -21,6 +22,12 @@ interface ImageProps {
   };
   className?: string;
 }
+const defaultGradientOverlay = {
+  enabled: false,
+  color: 'var(--color-black)',
+  opacity: 0.5,
+  direction: 'bottom',
+};
 
 const Image: React.FC<ImageProps> = ({
   children,
@@ -28,27 +35,27 @@ const Image: React.FC<ImageProps> = ({
   src,
   alt,
   overlay,
-  gradientOverlay,
+  gradientOverlay = defaultGradientOverlay,
   className = '',
 }) => {
   const containerStyle: React.CSSProperties = {
     aspectRatio: aspectRatio.toString(),
   };
-
-  const gradientStyle = gradientOverlay?.enabled
+  const gradientOverlayPatched = { ...defaultGradientOverlay, ...gradientOverlay };
+  const gradientStyle = gradientOverlayPatched?.enabled
     ? {
         background: `linear-gradient(
           ${
-            gradientOverlay.direction === 'top'
+            gradientOverlayPatched.direction === 'top'
               ? '180deg'
-              : gradientOverlay.direction === 'left'
+              : gradientOverlayPatched.direction === 'left'
                 ? '90deg'
-                : gradientOverlay.direction === 'right'
+                : gradientOverlayPatched.direction === 'right'
                   ? '270deg'
                   : '0deg'
           },
-          ${gradientOverlay.color || 'rgba(0, 0, 0, 0.6)'} 0%,
-          transparent ${gradientOverlay.opacity ? `${gradientOverlay.opacity * 100}%` : '100%'}
+          ${gradientOverlayPatched.color || 'rgba(0, 0, 0, 0.6)'} 0%,
+          transparent ${gradientOverlayPatched.opacity ? `${gradientOverlayPatched.opacity * 100}%` : '100%'}
         )`,
       }
     : {};
@@ -61,14 +68,14 @@ const Image: React.FC<ImageProps> = ({
         <div className={styles['image-placeholder']}>{children}</div>
       )}
 
-      {gradientOverlay?.enabled && (
+      {gradientOverlayPatched?.enabled && (
         <div className={styles['gradient-overlay']} style={gradientStyle} />
       )}
 
       {overlay && (
         <div className={`${styles.overlay} ${styles[`overlay-${overlay.position || 'center'}`]}`}>
           {overlay.icon && <div className={styles['overlay-icon']}>{overlay.icon}</div>}
-          {overlay.text && <div className={styles['overlay-text']}>{overlay.text}</div>}
+          {overlay.text && <section className={styles['overlay-text']}>{overlay.text}</section>}
         </div>
       )}
     </div>

@@ -27,7 +27,7 @@
   display: grid;
   place-items: center;
   color: #666;
-  font-weight: bold;
+  font-weight: var(--font-weight-bold);
 }
 
 /* Gradient overlay */
@@ -84,18 +84,19 @@
   margin-bottom: 0;
 }
 
-.overlay-text {
-  font-weight: bold;
-  font-size: 16px;
+.overlay-text h3 {
+  font-weight: var(--font-weight-bold);
   line-height: 1.4;
   max-width: 300px;
   word-wrap: break-word;
+  text-align: center;
+  color: var(--color-white);
 }
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
   .overlay-text {
-    font-size: 14px;
+    font-size: var(--font-size-body-small);
     max-width: 250px;
   }
 
@@ -114,7 +115,7 @@
   }
 
   .overlay-text {
-    font-size: 12px;
+    font-size: var(--font-size-caption);
     max-width: 200px;
   }
 
