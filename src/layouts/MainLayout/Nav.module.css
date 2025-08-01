@@ -1,16 +1,27 @@
 .main-nav-refined {
-  background: #000;
   padding: 20px;
   border-bottom: 1.5px solid #222;
-  position: sticky;
-  top: 0;
-  z-index: 100;
 }
 .nav-container {
   display: flex;
   align-items: center;
   justify-content: space-between;
   min-height: 80px;
+}
+
+/* Mobile responsive adjustments */
+@media (max-width: 600px) {
+  .main-nav-refined {
+    padding: 15px 20px;
+  }
+
+  .nav-container {
+    min-height: 60px;
+  }
+
+  .logo-svg {
+    height: 60px;
+  }
 }
 .nav-logo {
   flex: 0 0 auto;

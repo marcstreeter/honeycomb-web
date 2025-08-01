@@ -1,3 +1,4 @@
+import { AppBar } from '@mui/material';
 import type React from 'react';
 import Nav from './Nav';
 import TopBar from './TopBar';
@@ -26,7 +27,14 @@ const Header: React.FC<HeaderProps> = ({
   handleMenuOpen,
   handleMenuClose,
 }) => (
-  <header style={{ padding: '10px 20px 0 20px', background: 'var(--color-black)' }}>
+  <AppBar
+    position="fixed"
+    sx={{
+      backgroundColor: 'var(--color-black)',
+      boxShadow: 'none',
+      padding: '10px 20px 0 20px',
+    }}
+  >
     <TopBar />
     <Nav
       acAnchor={acAnchor}
@@ -38,7 +46,7 @@ const Header: React.FC<HeaderProps> = ({
       handleMenuOpen={handleMenuOpen}
       handleMenuClose={handleMenuClose}
     />
-  </header>
+  </AppBar>
 );
 
 export default Header;

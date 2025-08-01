@@ -388,6 +388,7 @@ const Nav: React.FC<NavProps> = ({
             keepMounted: true,
           }}
           sx={{
+            zIndex: (theme) => theme.zIndex.appBar + 1,
             '& .MuiDrawer-paper': {
               boxSizing: 'border-box',
               width: 280,

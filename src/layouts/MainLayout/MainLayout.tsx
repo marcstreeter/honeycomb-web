@@ -1,3 +1,4 @@
+import { Toolbar, useMediaQuery, useTheme } from '@mui/material';
 import type React from 'react';
 import Footer from './Footer';
 import Header from './Header';
@@ -27,21 +28,36 @@ const MainLayout: React.FC<MainLayoutProps> = ({
   setIaqAnchor,
   handleMenuOpen,
   handleMenuClose,
-}) => (
-  <>
-    <Header
-      acAnchor={acAnchor}
-      setAcAnchor={setAcAnchor}
-      heatingAnchor={heatingAnchor}
-      setHeatingAnchor={setHeatingAnchor}
-      iaqAnchor={iaqAnchor}
-      setIaqAnchor={setIaqAnchor}
-      handleMenuOpen={handleMenuOpen}
-      handleMenuClose={handleMenuClose}
-    />
-    <main>{children}</main>
-    <Footer />
-  </>
-);
+}) => {
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
+  const isSmallMobile = useMediaQuery('(max-width:480px)');
+
+  // Calculate header height based on screen size
+  // TopBar: ~38px, Nav: varies by screen size, Header padding: 10px top
+  const headerHeight = isSmallMobile
+    ? '105px' // TopBar hidden + Nav (60px) + padding (15px + 15px + 10px + 5px)
+    : isMobile
+      ? '133px' // TopBar (38px) + Nav (60px) + padding (15px + 15px + 10px + 5px)
+      : '168px'; // TopBar (38px) + Nav (80px) + padding (20px + 20px + 10px)
+
+  return (
+    <>
+      <Header
+        acAnchor={acAnchor}
+        setAcAnchor={setAcAnchor}
+        heatingAnchor={heatingAnchor}
+        setHeatingAnchor={setHeatingAnchor}
+        iaqAnchor={iaqAnchor}
+        setIaqAnchor={setIaqAnchor}
+        handleMenuOpen={handleMenuOpen}
+        handleMenuClose={handleMenuClose}
+      />
+      <Toolbar sx={{ minHeight: `${headerHeight} !important` }} />
+      <main>{children}</main>
+      <Footer />
+    </>
+  );
+};
 
 export default MainLayout;
