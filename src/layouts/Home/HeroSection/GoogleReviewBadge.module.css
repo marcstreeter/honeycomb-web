@@ -26,12 +26,10 @@
   color: var(--color-black);
 }
 .google-rating-number {
-  color: var(--color-blue);
   font-weight: 700;
   font-size: 20px;
 }
 .google-rating-count {
-  color: #666;
   font-size: 15px;
   font-weight: 400;
 }
