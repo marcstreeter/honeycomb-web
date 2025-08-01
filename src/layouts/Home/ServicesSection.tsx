@@ -17,18 +17,6 @@ const ServicesSection: React.FC = () => (
       <div className={`${styles['services-grid']}`}>
         <div className={`${styles['service-card']}`}>
           <Image
-            src={ServiceAC}
-            alt="AC Technician"
-            aspectRatio={1}
-            overlay={{
-              text: <h3>AIR CONDITIONING</h3>,
-              position: 'bottom',
-            }}
-            gradientOverlay={{ enabled: true }}
-          />
-        </div>
-        <div className={`${styles['service-card']}`}>
-          <Image
             src={ServiceHeat}
             alt="Heating Technician"
             aspectRatio={1}
@@ -46,6 +34,18 @@ const ServicesSection: React.FC = () => (
             aspectRatio={1}
             overlay={{
               text: <h3>AIR QUALITY</h3>,
+              position: 'bottom',
+            }}
+            gradientOverlay={{ enabled: true }}
+          />
+        </div>
+        <div className={`${styles['service-card']}`}>
+          <Image
+            src={ServiceAC}
+            alt="AC Technician"
+            aspectRatio={1}
+            overlay={{
+              text: <h3>AIR CONDITIONING</h3>,
               position: 'bottom',
             }}
             gradientOverlay={{ enabled: true }}

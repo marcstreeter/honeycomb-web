@@ -87,8 +87,7 @@
 .overlay-text h3 {
   font-weight: var(--font-weight-bold);
   line-height: 1.4;
-  max-width: 300px;
-  word-wrap: break-word;
+  white-space: nowrap;
   text-align: center;
   color: var(--color-white);
 }
@@ -97,7 +96,6 @@
 @media (max-width: 768px) {
   .overlay-text h3 {
     font-size: var(--font-size-body-small);
-    max-width: 250px;
   }
 
   .overlay-top,
@@ -115,7 +113,6 @@
 
   .overlay-text h3 {
     font-size: var(--font-size-caption);
-    max-width: 200px;
   }
 
   .overlay-top,
