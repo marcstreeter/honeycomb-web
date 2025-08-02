@@ -1,8 +1,10 @@
 # honeycomb-web
 
-A react frontend for honeycomb-web by marcstreeterdev
+A react frontend for honeycomb-web.
 
-Completely update this file to suit honeycomb-web!
+## Related README's
+- [Font System](./README.FONT_SYSTEM.md)
+- [Testing System](./README.TESTING.md)
 
 ## Requirements
 
@@ -17,10 +19,10 @@ Completely update this file to suit honeycomb-web!
 
 ### Getting Started
 
-This project uses a justfile for all development tasks. Run `just` to see all available commands.
+Run `just` to see all available commands.
 
 ```bash
-# Setup and start development
+# Useful for development
 just dev
 ```
 
@@ -33,17 +35,7 @@ just dev
 - **Lefthook**: Git hooks for pre-commit checks
 - **Colocated Tests**: Tests live next to source files
 - **Tilt Integration**: Containerized reproducible development with live reloading
-- **Comprehensive Examples**: Real-world patterns and practices
 
-## Examples
-
-This template includes working examples in the `src` directory of:
-- Reusable components with TypeScript interfaces
-- Page-level components with state management
-- Utility functions with comprehensive tests
-- Asset imports and usage
-- Storybook stories with interactive controls
-- Colocated test patterns
 
 ## Deployment
 
