@@ -41,8 +41,8 @@ export default defineConfig({
     setupFiles: ['src/setupTests.ts'],
     projects: [
       {
-        name: 'unit',
         test: {
+          name: 'unit',
           environment: 'jsdom',
           setupFiles: ['src/setupTests.ts'],
           exclude: ['**/*.stories.*', 'node_modules/**/*'],

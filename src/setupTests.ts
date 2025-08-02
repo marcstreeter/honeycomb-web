@@ -75,7 +75,13 @@ vi.mock('@mui/material/Button', () => ({
         onClick,
         href,
         className,
-        style: sx ? { backgroundColor: sx.backgroundColor || sx.background } : undefined,
+        style: sx
+          ? {
+              backgroundColor:
+                (sx as Record<string, unknown>)?.backgroundColor ||
+                (sx as Record<string, unknown>)?.background,
+            }
+          : undefined,
         'data-testid': 'mui-button',
         ...props,
         children: [
