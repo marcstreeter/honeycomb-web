@@ -95,10 +95,9 @@ describe('HomeLayout', () => {
     expect(gridWrapper).toBeInTheDocument();
 
     const heroSection = screen.getByTestId('hero-section');
-    // const keyDifferentiators = screen.getByTestId('key-differentiators');
     const servicesSection = screen.getByTestId('services-section');
 
     expect(gridWrapper).toContainElement(heroSection);
-    // expect(gridWrapper).toContainElement(servicesSection);
+    expect(gridWrapper).toContainElement(servicesSection);
   });
 });
