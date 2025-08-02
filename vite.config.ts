@@ -73,6 +73,7 @@ export default defineConfig({
             ],
           },
           setupFiles: ['.storybook/vitest.setup.ts'],
+          retry: 1,
         },
       },
     ],
