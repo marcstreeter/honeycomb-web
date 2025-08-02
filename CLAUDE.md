@@ -26,6 +26,14 @@ The project uses a justfile for all development tasks. Run `just` to see all ava
 - `npm run test:ui` - Run tests with UI
 - `npm run test:coverage` - Run tests with coverage report
 
+#### Known Testing Issues
+**React 19 + Storybook + Vitest Browser Mode Compatibility (TEMPORARY)**
+- Storybook tests pass (19/19) but generate unhandled errors in containerized browser environment
+- React hooks return `null` causing "Invalid hook call" and "act(...)" warnings
+- CI configured with `|| true` to ignore exit code 1 from these warnings
+- **Remove workaround when**: React 19 + Storybook + Vitest compatibility is resolved upstream
+- **Test removal**: Run `docker run --rm honeycomb_web-app npm run test` - if exit code 0, remove workaround
+
 ### Storybook Commands
 - `npm run storybook` - Start Storybook development server
 - `npm run build-storybook` - Build Storybook for production
