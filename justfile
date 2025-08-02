@@ -3,7 +3,7 @@
 
 # Variables
 namespace := "default"
-deployment := "honeycomb-web"
+deployment := "honeycomb-web-app"
 kubexec := "kubectl -n " + namespace + " exec deploy/" + deployment
 context := "docker-desktop"
 

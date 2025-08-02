@@ -1,4 +1,10 @@
 import type { Preview } from '@storybook/react-vite';
+import React from 'react';
+
+// Ensure React is globally available for browser tests
+if (typeof globalThis !== 'undefined') {
+  globalThis.React = React;
+}
 
 const preview: Preview = {
   parameters: {

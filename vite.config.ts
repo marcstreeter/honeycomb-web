@@ -13,6 +13,9 @@ const dirname = path.dirname(fileURLToPath(import.meta.url));
 export default defineConfig({
   base: '/honeycomb-web/', // Set base for GitHub Pages
   plugins: [react()],
+  optimizeDeps: {
+    include: ['markdown-to-jsx', 'react', 'react-dom', 'react/jsx-runtime'],
+  },
   resolve: {
     alias: {
       '@assets': path.resolve(dirname, 'src/assets'),
