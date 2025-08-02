@@ -21,6 +21,7 @@
     "test:watch": "vitest",
     "test:ui": "vitest --ui",
     "test:coverage": "vitest --coverage",
+    "test:setup": "playwright install --with-deps chromium",
     "lefthook": "lefthook"
   },
   "dependencies": {
