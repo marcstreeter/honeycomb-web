@@ -20,6 +20,7 @@ import type React from 'react';
 import { useState } from 'react';
 import Icon from '../../assets/icons/Icon';
 import Logo from '../../assets/icons/logo.svg';
+import LogoSmall from '../../assets/icons/logo-small.svg';
 import Button from '../../components/Button';
 import styles from './Nav.module.css';
 
@@ -35,6 +36,7 @@ interface NavProps {
     setAnchor: (anchor: HTMLElement | null) => void
   ) => void;
   handleMenuClose: (setAnchor: (anchor: null) => void) => void;
+  isScrolled: boolean;
 }
 
 const Nav: React.FC<NavProps> = ({
@@ -46,6 +48,7 @@ const Nav: React.FC<NavProps> = ({
   setIaqAnchor,
   handleMenuOpen,
   handleMenuClose,
+  isScrolled,
 }) => {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('lg'));
@@ -233,10 +236,25 @@ const Nav: React.FC<NavProps> = ({
   );
 
   return (
-    <nav className={`${styles['main-nav-refined']}`}>
-      <div className={`${styles.container} ${styles['nav-container']}`}>
+    <nav className={`${styles['main-nav-refined']} ${isScrolled ? styles['nav-scrolled'] : ''}`}>
+      <div
+        className={`${styles.container} ${styles['nav-container']} ${isScrolled ? styles['nav-container-scrolled'] : ''}`}
+      >
         <div className={`${styles['nav-logo']}`}>
-          <img src={Logo} alt="Honeycomb Logo" className={`${styles['logo-svg']}`} height={80} />
+          <div className={styles['logo-container']}>
+            <img
+              src={Logo}
+              alt="Honeycomb Logo"
+              className={`${styles['logo-svg']} ${styles['logo-large']} ${isScrolled ? styles['logo-fade-out'] : styles['logo-fade-in']}`}
+              height={80}
+            />
+            <img
+              src={LogoSmall}
+              alt="Honeycomb Logo"
+              className={`${styles['logo-svg']} ${styles['logo-small']} ${isScrolled ? styles['logo-fade-in'] : styles['logo-fade-out']}`}
+              height={18}
+            />
+          </div>
         </div>
 
         {/* Desktop Navigation */}
