@@ -74,7 +74,6 @@ export default defineConfig({
             ],
           },
           setupFiles: ['.storybook/vitest.setup.ts'],
-          passWithNoTests: true,
           // KNOWN ISSUE: React 19 + Storybook + Vitest browser mode compatibility
           // React hooks (useState, useContext) return null in containerized browser environment
           // causing unhandled errors but tests still pass. This is a known upstream issue.
