@@ -25,15 +25,51 @@
 .testimonial-content {
   flex: 1;
   text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.testimonial-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.testimonial-customer {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.customer-image {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.customer-initials {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--color-black);
+  color: var(--color-yellow);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.875rem;
 }
 
 .testimonial-quote {
   font-size: 1rem;
   font-style: italic;
   color: var(--color-black);
+  margin: 0;
 }
 
-.testimonial-customer {
+.customer-name {
   font-weight: 700;
   color: var(--color-black);
   font-size: 1rem;
