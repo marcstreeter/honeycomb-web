@@ -24,7 +24,7 @@ const serviceImages: ServiceImage[] = [
   { src: ServiceIndoorAirQuality, alt: 'Indoor Air Quality', title: 'AIR QUALITY' },
   { src: ServiceTuneUp, alt: 'AC Tune-Up', title: 'AC TUNE-UP' },
   { src: ServiceIAQ, alt: 'Air Quality Technician', title: 'AIR FILTERS' },
-  { src: ServiceMaintenance, alt: 'Heater Maintenance', title: 'HEATER UPKEEP' },
+  { src: ServiceMaintenance, alt: 'Heater Maintenance', title: 'UNIT UPKEEP' },
   { src: ServiceAC, alt: 'AC Technician', title: 'AIR CONDITIONING' },
   { src: ServiceDuct, alt: 'Duct Services', title: 'DUCT SERVICE' },
   { src: ServiceSmartHome, alt: 'Smart Home Thermostat Installation', title: 'SMART HOME' },
