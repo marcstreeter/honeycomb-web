@@ -7,12 +7,14 @@ interface ButtonProps extends Omit<MuiButtonProps, 'color'> {
   iconColor?: string; // color for icons
   children?: React.ReactNode;
   text?: string; // alternative way to provide button text
+  shortLabel?: string; // short version of the label for compact display
   className?: string;
   href?: string;
   bgColor?: string; // custom background color
   bgColorHover?: string; // custom background color on hover
   textColor?: string; // custom text color
   muiColor?: MuiButtonProps['color']; // MUI's original color prop
+  showSmall?: boolean; // show short label if provided, otherwise hide label and show only icon
 }
 
 const iconSx = {
@@ -33,12 +35,14 @@ const Button: React.FC<ButtonProps> = ({
   iconColor,
   children,
   text,
+  shortLabel,
   className = '',
   href,
   bgColor,
   bgColorHover = 'var(--color-dark-yellow)',
   textColor,
   muiColor,
+  showSmall = false,
   style,
   ...props
 }) => {
@@ -57,28 +61,32 @@ const Button: React.FC<ButtonProps> = ({
     }
     return iconNode;
   };
-  // Determine button text content - prioritize children over text prop
-  const buttonContent = children || text;
+  // Determine button text content based on showSmall state
+  const buttonContent = showSmall
+    ? shortLabel || null // If showSmall, use shortLabel if provided, otherwise null (icon only)
+    : children || text; // If not showSmall, use normal content
+
+  const isIconOnly = showSmall && !shortLabel;
 
   const buttonSx = {
     display: 'inline-flex',
     alignItems: 'center',
     justifyContent: 'center',
-    gap: '0.5em',
+    gap: isIconOnly ? '0' : '0.5em',
     background: bgColor || 'var(--color-blue)',
     color: textColor || 'var(--color-white)',
     border: 'none',
     borderRadius: 0,
     fontSize: 'var(--font-size-button)',
     fontWeight: 'var(--font-weight-semibold)',
-    padding: '0.75em 1em',
+    padding: isIconOnly ? '0.75em' : '0.75em 1em',
     cursor: 'pointer',
     transition: 'background 0.2s',
     boxShadow: 'none',
     outline: 'none',
     whiteSpace: 'nowrap',
     width: 'fit-content',
-    minWidth: 'auto',
+    minWidth: isIconOnly ? '3em' : 'auto',
     textTransform: 'capitalize',
     '&:hover, &:focus': {
       background: bgColorHover,
