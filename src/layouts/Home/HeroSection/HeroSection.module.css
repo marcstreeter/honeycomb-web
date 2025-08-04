@@ -9,6 +9,8 @@
   padding: var(--container-padding-inline-all);
   position: relative;
   border-bottom: 20px solid var(--color-dark-yellow);
+  margin-top: -48px;
+  padding-top: 64px;
 }
 
 .hero .container {
@@ -24,6 +26,7 @@
 @media (max-width: 768px) {
   .hero {
     padding: var(--container-padding-inline-mobile-all);
+    padding-top: 112px;
   }
 
   .hero .container {

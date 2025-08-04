@@ -28,6 +28,7 @@ const NavWrapper = () => {
       setIaqAnchor={setIaqAnchor}
       handleMenuOpen={handleMenuOpen}
       handleMenuClose={handleMenuClose}
+      isScrolled={false}
     />
   );
 };

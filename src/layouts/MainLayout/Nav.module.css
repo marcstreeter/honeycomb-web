@@ -1,5 +1,5 @@
 .main-nav-refined {
-  padding: 20px;
+  padding: 8px 20px 12px 20px;
   border-bottom: 1.5px solid #222;
   transition: padding 0.3s ease-in-out;
 }
@@ -12,22 +12,15 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  min-height: 80px;
-  transition: min-height 0.3s ease-in-out;
-}
-
-.nav-container-scrolled {
-  min-height: 45px;
 }
 
 /* Mobile responsive adjustments */
 @media (max-width: 600px) {
   .main-nav-refined {
-    padding: 15px 20px;
+    padding: 8px 20px 2px 20px;
   }
 
   .nav-container {
-    min-height: 60px;
     justify-content: space-between;
   }
 
@@ -37,18 +30,7 @@
   }
 
   .logo-container {
-    height: 60px;
     min-width: 150px;
-  }
-
-  .logo-large {
-    height: 60px;
-    max-width: 100%;
-  }
-
-  .logo-small {
-    height: 18px;
-    max-width: 200px;
   }
 
   .hamburger-btn {
@@ -67,9 +49,9 @@
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  height: 80px;
   width: auto;
   min-width: 200px;
+  transform: translateY(24px);
 }
 
 .logo-svg {
