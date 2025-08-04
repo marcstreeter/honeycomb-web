@@ -7,21 +7,15 @@ interface DiscountCardProps {
   title: string;
   description: string;
   buttonText: string;
-  onButtonClick?: () => void;
 }
 
-const DiscountCard: React.FC<DiscountCardProps> = ({
-  title,
-  description,
-  buttonText,
-  onButtonClick,
-}) => (
+const DiscountCard: React.FC<DiscountCardProps> = ({ title, description, buttonText }) => (
   <div className={styles['discount-card']}>
     <div className={styles.logo}>{<LogoIcon />}</div>
     <div className={styles.content}>
       <h3>{title}</h3>
       <p>{description}</p>
-      <Button onClick={onButtonClick}>{buttonText}</Button>
+      <Button href={'tel:210-405-3291'}>{buttonText}</Button>
     </div>
   </div>
 );
