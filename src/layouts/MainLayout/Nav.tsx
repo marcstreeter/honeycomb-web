@@ -267,6 +267,7 @@ const Nav: React.FC<NavProps> = ({
                 open={Boolean(acAnchor)}
                 onClose={() => handleMenuClose(setAcAnchor)}
                 className={`${styles['nav-dropdown-menu']}`}
+                disableScrollLock={true}
                 MenuListProps={{
                   onMouseLeave: () => handleMenuClose(setAcAnchor),
                 }}
@@ -301,6 +302,7 @@ const Nav: React.FC<NavProps> = ({
                 open={Boolean(heatingAnchor)}
                 onClose={() => handleMenuClose(setHeatingAnchor)}
                 className={`${styles['nav-dropdown-menu']}`}
+                disableScrollLock={true}
                 MenuListProps={{
                   onMouseLeave: () => handleMenuClose(setHeatingAnchor),
                 }}
@@ -335,6 +337,7 @@ const Nav: React.FC<NavProps> = ({
                 open={Boolean(iaqAnchor)}
                 onClose={() => handleMenuClose(setIaqAnchor)}
                 className={`${styles['nav-dropdown-menu']}`}
+                disableScrollLock={true}
                 MenuListProps={{
                   onMouseLeave: () => handleMenuClose(setIaqAnchor),
                 }}
