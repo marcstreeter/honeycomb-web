@@ -28,8 +28,11 @@
 }
 
 .areas-list {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  width: 100%;
+  max-width: 450px;
 }
 
 .areas-content {
@@ -98,6 +101,11 @@
   .areas-content,
   .map-container {
     width: 100%;
+  }
+
+  .map-container {
+    height: 350px;
+    aspect-ratio: 1;
   }
 
   .areas-list {

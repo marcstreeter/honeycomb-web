@@ -19,12 +19,6 @@ const ServiceAreaItem: React.FC<ServiceAreaItemProps> = ({ label, onClick }) => 
         textColor="var(--color-black)"
         className={styles['area-item']}
         icon={<Icon iconKey="gps-marker" fill="var(--color-red)" />}
-        style={{
-          padding: '10px 0',
-          border: 'none',
-          fontWeight: 'normal',
-          justifyContent: 'flex-start',
-        }}
       >
         {label}
       </Button>

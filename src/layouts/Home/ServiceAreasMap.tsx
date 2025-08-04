@@ -20,13 +20,13 @@ export interface ServiceArea {
 
 // San Antonio area service locations
 export const serviceAreas: ServiceArea[] = [
-  { name: 'Downtown San Antonio', lat: 29.4241, lng: -98.4936 },
-  { name: 'North San Antonio', lat: 29.5149, lng: -98.4951 },
-  { name: 'West San Antonio', lat: 29.4497, lng: -98.6197 },
-  { name: 'East San Antonio', lat: 29.4572, lng: -98.3698 },
+  { name: 'Downtown', lat: 29.4241, lng: -98.4936 },
+  { name: 'Northside', lat: 29.5149, lng: -98.4951 },
+  { name: 'Westside', lat: 29.4497, lng: -98.6197 },
+  { name: 'Eastside', lat: 29.4572, lng: -98.3698 },
   { name: 'Alamo Heights', lat: 29.4919, lng: -98.4669 },
   { name: 'Stone Oak', lat: 29.6266, lng: -98.4697 },
-  { name: 'The Dominion', lat: 29.5927, lng: -98.6781 },
+  { name: 'Dominion', lat: 29.5927, lng: -98.6781 },
   { name: 'Southtown', lat: 29.4046, lng: -98.4951 },
 ];
 
