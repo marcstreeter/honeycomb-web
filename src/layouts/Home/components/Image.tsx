@@ -8,6 +8,7 @@ interface ImageProps {
   aspectRatio?: number; // width / height ratio (e.g., 16/9 = 1.78)
   src?: string;
   alt?: string;
+  loading?: boolean;
   overlay?: {
     icon?: React.ReactNode;
     text?: React.ReactNode;
@@ -34,6 +35,7 @@ const Image: React.FC<ImageProps> = ({
   aspectRatio = 16 / 9, // Default 16:9 aspect ratio
   src,
   alt,
+  loading = false,
   overlay,
   gradientOverlay = defaultGradientOverlay,
   className = '',
@@ -62,7 +64,11 @@ const Image: React.FC<ImageProps> = ({
 
   return (
     <div className={`${styles['image-viewport']} ${className}`} style={containerStyle}>
-      {src ? (
+      {loading ? (
+        <div className={`${styles['image-placeholder']} ${styles.loading}`}>
+          <div className={styles['loading-spinner']} />
+        </div>
+      ) : src ? (
         <img src={src} alt={alt || ''} className={styles.image} />
       ) : (
         <div className={styles['image-placeholder']}>{children}</div>
