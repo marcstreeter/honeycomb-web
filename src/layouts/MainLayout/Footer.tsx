@@ -56,6 +56,36 @@ const Footer: React.FC = () => (
         </div>
       </div>
     </div>
+    <div className={`${styles['footer-bottom']}`}>
+      <div className={`${styles['footer-bottom-container']}`}>
+        <div className={`${styles['footer-copyright']}`}>
+          © 2025 Honeycomb Heating & Cooling All Rights Reserved. Privacy Policy
+        </div>
+        <div className={`${styles['footer-social']}`}>
+          <a
+            href="https://www.instagram.com/honeycombhvac"
+            className={`${styles['social-link']}`}
+            aria-label="Instagram"
+          >
+            <Icon iconKey="social-insta" />
+          </a>
+          <a
+            href="https://www.facebook.com/people/Honeycomb-Air/61563373273355/"
+            className={`${styles['social-link']}`}
+            aria-label="Facebook"
+          >
+            <Icon iconKey="social-facebook" />
+          </a>
+          <a
+            href="https://www.tiktok.com/@honeycomb.hvac"
+            className={`${styles['social-link']}`}
+            aria-label="TikTok"
+          >
+            <Icon iconKey="social-tiktok" />
+          </a>
+        </div>
+      </div>
+    </div>
   </footer>
 );
 
