@@ -21,12 +21,12 @@ interface ServiceImage {
 
 const serviceImages: ServiceImage[] = [
   { src: ServiceHeat, alt: 'Heating Technician', title: 'HEATING' },
-  { src: ServiceIndoorAirQuality, alt: 'Indoor Air Quality', title: 'INDOOR AIR QUALITY' },
+  { src: ServiceIndoorAirQuality, alt: 'Indoor Air Quality', title: 'AIR QUALITY' },
   { src: ServiceTuneUp, alt: 'AC Tune-Up', title: 'AC TUNE-UP' },
   { src: ServiceIAQ, alt: 'Air Quality Technician', title: 'AIR FILTERS' },
-  { src: ServiceMaintenance, alt: 'Heater Maintenance', title: 'HEATER MAINTENANCE' },
+  { src: ServiceMaintenance, alt: 'Heater Maintenance', title: 'HEATER UPKEEP' },
   { src: ServiceAC, alt: 'AC Technician', title: 'AIR CONDITIONING' },
-  { src: ServiceDuct, alt: 'Duct Services', title: 'DUCT SERVICES' },
+  { src: ServiceDuct, alt: 'Duct Services', title: 'DUCT SERVICE' },
   { src: ServiceSmartHome, alt: 'Smart Home Thermostat Installation', title: 'SMART HOME' },
   { src: ServiceHeatPumps, alt: 'Heat Pumps', title: 'HEAT PUMPS' },
 ];
