@@ -90,8 +90,22 @@
   height: 18px;
   border-radius: 50%;
   background: var(--color-dark-blue);
+  border: none;
+  outline: none;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  box-shadow: none;
+  padding: 0;
+  margin: 0;
+}
+
+.dot:hover {
+  background: rgba(255, 200, 0, 0.8);
+}
+
+.dot:focus {
+  outline: 2px solid var(--color-yellow);
+  outline-offset: 2px;
 }
 
 .dot.active {
