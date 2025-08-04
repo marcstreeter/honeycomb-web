@@ -10,6 +10,7 @@ interface ButtonProps extends Omit<MuiButtonProps, 'color'> {
   shortLabel?: string; // short version of the label for compact display
   className?: string;
   href?: string;
+  hrefFollow?: boolean;
   bgColor?: string; // custom background color
   bgColorHover?: string; // custom background color on hover
   textColor?: string; // custom text color
@@ -38,6 +39,7 @@ const Button: React.FC<ButtonProps> = ({
   shortLabel,
   className = '',
   href,
+  hrefFollow = false,
   bgColor,
   bgColorHover = 'var(--color-dark-yellow)',
   textColor,
@@ -108,6 +110,8 @@ const Button: React.FC<ButtonProps> = ({
       startIcon={icon ? renderIcon(icon, true) : undefined}
       endIcon={endIcon ? renderIcon(endIcon, false) : undefined}
       href={href}
+      target={hrefFollow ? undefined : '_blank'}
+      rel={hrefFollow ? undefined : 'noopener noreferrer'}
       component={href ? 'a' : 'button'}
       className={className}
       color={muiColor}

@@ -1,6 +1,7 @@
 import type React from 'react';
 
 import Button from '../../components/Button';
+import { reviews } from '../../data/reviews';
 import TestimonialsCard from './TestimonialsCard';
 import styles from './TestimonialsSection.module.css';
 
@@ -16,28 +17,31 @@ const TestimonialsSection: React.FC = () => (
         What our customers say
       </h2>
       <div className={styles['testimonials-grid']}>
-        <TestimonialsCard
-          stars={5}
-          logo="google"
-          quote="Excellent service! The team was professional and got our AC working quickly."
-          customerName="James Smith"
-        />
-        <TestimonialsCard
-          stars={5}
-          logo="google"
-          quote="Very reliable and honest pricing. Highly recommend their services. Man I thought I was going to be stuck in the heat all day. But it was fixed in no time. And really affordable."
-          customerName="Lily Jones"
-        />
-        <TestimonialsCard
-          stars={5}
-          logo="facebook"
-          quote="Great experience from start to finish. Will definitely use them again."
-          customerName="Sam V."
-        />
+        {reviews.slice(0, 3).map((review, _) => (
+          <TestimonialsCard
+            key={review.id}
+            quote={review.quote}
+            customerName={review.customerName}
+          />
+        ))}
       </div>
       <div className={styles['review-buttons']}>
-        <Button bgColor="var(--color-blue)" text="Read Reviews" textColor="var(--color-white)" />
-        <Button bgColor="var(--color-black)" text="Leave a Review" textColor="var(--color-white)" />
+        <Button
+          href={
+            'https://www.google.com/maps/place/Honeycomb+Heating+and+Cooling/@29.5082921,-98.8246924,10z/data=!4m2!3m1!1s0xfb58f97ead6bf09:0x8687c2c1a8b81ae8#lrd=0xfb58f97ead6bf09:0x8687c2c1a8b81ae8,1'
+          }
+          bgColor="var(--color-blue)"
+          text="Read Reviews"
+          textColor="var(--color-white)"
+        />
+        <Button
+          href={
+            'https://www.google.com/maps/place/Honeycomb+Heating+and+Cooling/@29.5082921,-98.8246924,10z/data=!4m2!3m1!1s0xfb58f97ead6bf09:0x8687c2c1a8b81ae8#lrd=0xfb58f97ead6bf09:0x8687c2c1a8b81ae8,1'
+          }
+          bgColor="var(--color-black)"
+          text="Leave a Review"
+          textColor="var(--color-white)"
+        />
       </div>
     </div>
   </section>
