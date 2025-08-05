@@ -82,12 +82,17 @@
   box-sizing: border-box;
 }
 
+html {
+  overflow-x: hidden;
+}
+
 body {
   font-family: var(--font-family-primary);
   line-height: var(--line-height-relaxed);
   color: var(--color-black);
   background-color: var(--color-white);
   font-size: var(--font-size-base);
+  overflow-x: hidden;
 }
 
 /* Centralized Container System */
