@@ -1,7 +1,9 @@
 import type * as React from 'react';
 import ToolBoxIcon from '../assets/icons/ToolBoxIcon'; // Or any icon you want
 
-const THEME_RED = '#e00404';
+const THEME_RED = 'var(--color-red)';
+const THEME_BLACK = 'var(--color-black)';
+const THEME_WHITE = 'var(--color-white)';
 
 interface HexagonProps extends React.SVGProps<SVGSVGElement> {
   color: string;
@@ -24,17 +26,18 @@ const Hexagon: React.FC<HexagonProps> = ({ color, width, height, ...props }) => 
 
 interface HoneyIconProps {
   icon?: React.ReactNode;
+  darkTheme?: boolean;
 }
 
-const HoneyIcon: React.FC<HoneyIconProps> = ({ icon }) => {
+const HoneyIcon: React.FC<HoneyIconProps> = ({ icon, darkTheme = false }) => {
   // Sizes
   const blackW = 80,
     blackH = 90;
-  const whiteW = 68,
-    whiteH = 75;
-  const border = blackW - whiteW; // 12
-  const redW = whiteW - border / 2; // 62
-  const redH = whiteH - border / 2; // 69
+  const borderW = 68,
+    borderH = 75;
+  const border = blackW - borderW; // 12
+  const redW = borderW - border / 2; // 62
+  const redH = borderH - border / 2; // 69
 
   return (
     <div style={{ position: 'relative', width: blackW, height: blackH }}>
@@ -46,11 +49,11 @@ const HoneyIcon: React.FC<HoneyIconProps> = ({ icon }) => {
       <div
         style={{
           position: 'absolute',
-          top: (blackH - whiteH) / 2,
-          left: (blackW - whiteW) / 2,
+          top: (blackH - borderH) / 2,
+          left: (blackW - borderW) / 2,
         }}
       >
-        <Hexagon color="white" width={whiteW} height={whiteH} />
+        <Hexagon color={darkTheme ? THEME_BLACK : THEME_WHITE} width={borderW} height={borderH} />
       </div>
       {/* Red (theme) */}
       <div
@@ -60,7 +63,7 @@ const HoneyIcon: React.FC<HoneyIconProps> = ({ icon }) => {
           left: (blackW - redW) / 2,
         }}
       >
-        <Hexagon color={THEME_RED} width={redW} height={redH} />
+        <Hexagon color={darkTheme ? THEME_BLACK : THEME_RED} width={redW} height={redH} />
       </div>
       {/* Icon - vertically offset for visual centering */}
       <div

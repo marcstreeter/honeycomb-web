@@ -207,6 +207,20 @@ const Nav: React.FC<NavProps> = ({
         <ListItem disablePadding>
           <ListItemButton
             component="a"
+            href="/upgrade"
+            className={styles['drawer-item']}
+            onClick={handleDrawerClose}
+          >
+            <ListItemIcon>
+              <Icon iconKey="tool-box" className={styles['menu-icon']} fill="#ffd700" />
+            </ListItemIcon>
+            <ListItemText primary="Upgrade Offer" />
+          </ListItemButton>
+        </ListItem>
+
+        <ListItem disablePadding>
+          <ListItemButton
+            component="a"
             href="#schedule"
             className={styles['drawer-item']}
             onClick={handleDrawerClose}
@@ -364,6 +378,16 @@ const Nav: React.FC<NavProps> = ({
               </a>
             </div>
             <div className={`${styles['nav-actions-refined']}`}>
+              <Button
+                bgColor="var(--color-yellow)"
+                textColor="var(--color-black)"
+                bgColorHover="var(--color-dark-yellow)"
+                href="/upgrade"
+                className={`${styles['nav-link-simple']}`}
+                sx={{ mr: 2 }}
+              >
+                Upgrade Offer
+              </Button>
               <Button
                 icon={<Icon iconKey="phone" fill="currentColor" />}
                 bgColor="var(--color-red)"

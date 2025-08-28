@@ -20,8 +20,11 @@ export default defineConfig({
   resolve: {
     alias: {
       '@assets': path.resolve(dirname, 'src/assets'),
+      '@images': path.resolve(dirname, 'src/assets/images'),
+      '@icons': path.resolve(dirname, 'src/assets/icons'),
       '@components': path.resolve(dirname, 'src/components'),
       '@layouts': path.resolve(dirname, 'src/layouts'),
+      '@utils': path.resolve(dirname, 'src/utils'),
     },
   },
   build: {

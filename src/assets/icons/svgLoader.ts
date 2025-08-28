@@ -2,6 +2,12 @@
 
 // Available icon keys based on files that start with "icon-"
 export type IconKey =
+  | 'badge-case'
+  | 'badge-energy'
+  | 'badge-honest'
+  | 'badge-moneybag'
+  | 'badge-reliable'
+  | 'badge-stars'
   | 'phone'
   | 'calendar'
   | 'chevron-down'

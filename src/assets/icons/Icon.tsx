@@ -54,6 +54,8 @@ const Icon: React.FC<SVGIconProps> = ({
         // Use parsed viewBox from SVG or construct from provided dimensions
         if (parsed.viewBox) {
           setParsedViewBox(parsed.viewBox);
+        } else if ((parsed.width && parsed.height && viewBoxX) || viewBoxY) {
+          setParsedViewBox(`${viewBoxX} ${viewBoxY} ${parsed.width} ${parsed.height}`);
         } else if (parsed.width && parsed.height) {
           setParsedViewBox(`0 0 ${parsed.width} ${parsed.height}`);
         } else {
