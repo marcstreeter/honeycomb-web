@@ -7,8 +7,8 @@ import honeycombTeamImg from '@images/img-honeycomb-team.webp';
 const buttonAction = () => console.log('General CTA clicked');
 
 const PromotionalSample = () => {
-  // Set expiration time to 50 minutes from now
-  const expirationTime = new Date(Date.now() + 50 * 60 * 1000);
+  // Set a static expiration date (e.g., end of year 2024)
+  const expirationTime = new Date('2025-08-27T22:59:59');
 
   const heroSection = {
     mainText: 'Or we pay you $1,000',
@@ -116,10 +116,7 @@ const PromotionalSample = () => {
     location: 'San Antonio',
   };
 
-  const timerSection = {
-    title: 'Offer valid in pe time',
-    expirationTime: expirationTime,
-  };
+  const timerSection = { expirationTime };
 
   return (
     <PromotionalPage

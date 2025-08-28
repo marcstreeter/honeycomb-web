@@ -8,7 +8,7 @@ interface CountdownTimerProps {
 }
 
 const CountdownTimer = ({ expirationTime, className, style }: CountdownTimerProps) => {
-  const [timeLeft, setTimeLeft] = useState({ minutes: 0, seconds: 0 });
+  const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
 
   useEffect(() => {
     const calculateTimeLeft = () => {
@@ -17,11 +17,17 @@ const CountdownTimer = ({ expirationTime, className, style }: CountdownTimerProp
       const difference = expiration - now;
 
       if (difference > 0) {
+        const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+        const totalHours = Math.floor(difference / (1000 * 60 * 60));
+        const hours =
+          days >= 3
+            ? Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))
+            : totalHours;
         const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
         const seconds = Math.floor((difference % (1000 * 60)) / 1000);
-        setTimeLeft({ minutes, seconds });
+        setTimeLeft({ days, hours, minutes, seconds });
       } else {
-        setTimeLeft({ minutes: 0, seconds: 0 });
+        setTimeLeft({ days: 0, hours: 0, minutes: 0, seconds: 0 });
       }
     };
 
@@ -32,6 +38,9 @@ const CountdownTimer = ({ expirationTime, className, style }: CountdownTimerProp
   }, [expirationTime]);
 
   const formatTime = (time: number) => time.toString().padStart(2, '0');
+
+  const isExpired =
+    timeLeft.days === 0 && timeLeft.hours === 0 && timeLeft.minutes === 0 && timeLeft.seconds === 0;
 
   return (
     <Box
@@ -44,45 +53,127 @@ const CountdownTimer = ({ expirationTime, className, style }: CountdownTimerProp
         gap: 0.5,
       }}
     >
-      <Typography
-        variant="h2"
-        component="span"
-        sx={{
-          fontFamily: 'var(--font-family-display)',
-          fontSize: { xs: '2.5rem', sm: '3.5rem', md: '4rem' },
-          fontWeight: 'var(--font-weight-black)',
-          color: 'var(--color-black)',
-          lineHeight: 1,
-        }}
-      >
-        {formatTime(timeLeft.minutes)}
-      </Typography>
-      <Typography
-        variant="h2"
-        component="span"
-        sx={{
-          fontFamily: 'var(--font-family-display)',
-          fontSize: { xs: '2.5rem', sm: '3.5rem', md: '4rem' },
-          fontWeight: 'var(--font-weight-black)',
-          color: 'var(--color-black)',
-          lineHeight: 1,
-        }}
-      >
-        :
-      </Typography>
-      <Typography
-        variant="h2"
-        component="span"
-        sx={{
-          fontFamily: 'var(--font-family-display)',
-          fontSize: { xs: '2.5rem', sm: '3.5rem', md: '4rem' },
-          fontWeight: 'var(--font-weight-black)',
-          color: 'var(--color-black)',
-          lineHeight: 1,
-        }}
-      >
-        {formatTime(timeLeft.seconds)}
-      </Typography>
+      {isExpired ? (
+        <Typography
+          variant="h2"
+          component="span"
+          sx={{
+            fontFamily: 'var(--font-family-display)',
+            fontSize: { xs: '2.5rem', sm: '3.5rem', md: '4rem' },
+            fontWeight: 'var(--font-weight-black)',
+            color: 'var(--color-black)',
+            lineHeight: 1,
+          }}
+        >
+          Expired
+        </Typography>
+      ) : timeLeft.days >= 3 ? (
+        <>
+          <Typography
+            variant="h2"
+            component="span"
+            sx={{
+              fontFamily: 'var(--font-family-display)',
+              fontSize: { xs: '2.5rem', sm: '3.5rem', md: '4rem' },
+              fontWeight: 'var(--font-weight-black)',
+              color: 'var(--color-black)',
+              lineHeight: 1,
+              fontVariantNumeric: 'tabular-nums',
+            }}
+          >
+            {formatTime(timeLeft.days)}
+          </Typography>
+          <Typography
+            variant="h2"
+            component="span"
+            sx={{
+              fontFamily: 'var(--font-family-display)',
+              fontSize: { xs: '2.5rem', sm: '3.5rem', md: '4rem' },
+              fontWeight: 'var(--font-weight-black)',
+              color: 'var(--color-black)',
+              lineHeight: 1,
+              marginLeft: 1,
+            }}
+          >
+            days
+          </Typography>
+        </>
+      ) : (
+        <>
+          {timeLeft.hours > 0 && (
+            <>
+              <Typography
+                variant="h2"
+                component="span"
+                sx={{
+                  fontFamily: 'var(--font-family-display)',
+                  fontSize: { xs: '2.5rem', sm: '3.5rem', md: '4rem' },
+                  fontWeight: 'var(--font-weight-black)',
+                  color: 'var(--color-black)',
+                  lineHeight: 1,
+                }}
+              >
+                {formatTime(timeLeft.hours)}
+              </Typography>
+              <Typography
+                variant="h2"
+                component="span"
+                sx={{
+                  fontFamily: 'var(--font-family-display)',
+                  fontSize: { xs: '2.5rem', sm: '3.5rem', md: '4rem' },
+                  fontWeight: 'var(--font-weight-black)',
+                  color: 'var(--color-black)',
+                  lineHeight: 1,
+                }}
+              >
+                :
+              </Typography>
+            </>
+          )}
+          <Typography
+            variant="h2"
+            component="span"
+            sx={{
+              fontFamily: 'var(--font-family-display)',
+              fontSize: { xs: '2.5rem', sm: '3.5rem', md: '4rem' },
+              fontWeight: 'var(--font-weight-black)',
+              color: 'var(--color-black)',
+              lineHeight: 1,
+              fontVariantNumeric: 'tabular-nums',
+            }}
+          >
+            {formatTime(timeLeft.minutes)}
+          </Typography>
+          <Typography
+            variant="h2"
+            component="span"
+            sx={{
+              fontFamily: 'var(--font-family-display)',
+              fontSize: { xs: '2.5rem', sm: '3.5rem', md: '4rem' },
+              fontWeight: 'var(--font-weight-black)',
+              color: 'var(--color-black)',
+              lineHeight: 1,
+              fontVariantNumeric: 'tabular-nums',
+            }}
+          >
+            :
+          </Typography>
+          <Typography
+            variant="h2"
+            component="span"
+            sx={{
+              fontFamily: 'var(--font-family-display)',
+              fontSize: { xs: '2.5rem', sm: '3.5rem', md: '4rem' },
+              fontWeight: 'var(--font-weight-black)',
+              color: 'var(--color-black)',
+              lineHeight: 1,
+              fontVariantNumeric: 'tabular-nums',
+            }}
+          >
+            {formatTime(timeLeft.seconds)}
+          </Typography>
+        </>
+      )}
     </Box>
   );
 };

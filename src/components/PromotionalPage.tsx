@@ -53,7 +53,7 @@ export interface ReviewsSection {
 }
 
 export interface TimerSection {
-  title: string;
+  title?: string;
   expirationTime: string | Date;
   backgroundColor?: string;
 }
@@ -347,7 +347,7 @@ const PromotionalPage = ({
                     }}
                   >
                     <Typography variant="h3" sx={{ ...contentSX, color: 'var(--color-black)' }}>
-                      {timerSection.title}
+                      {timerSection.title || 'Call soon before offer expires!'}
                     </Typography>
                     <CountdownTimer expirationTime={timerSection.expirationTime} />
                   </Box>
