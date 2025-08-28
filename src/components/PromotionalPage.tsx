@@ -78,6 +78,7 @@ const PromotionalPage = ({
   const renderStars = (count: number) => {
     return Array.from({ length: count }, (_, i) => (
       <Typography
+        // biome-ignore lint/suspicious/noArrayIndexKey: static star count, order never changes
         key={`star-${i}`}
         component="span"
         sx={{ color: 'var(--color-yellow)', fontSize: '2rem' }}
