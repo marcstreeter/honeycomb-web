@@ -77,11 +77,11 @@
 
 .carousel-button:hover svg,
 .carousel-button:focus svg {
-  fill: var(--color-white) !important;
+  fill: var(--color-white);
 }
 
 .carousel-button:hover,
 .carousel-button:focus {
-  background: var(--color-yellow) !important;
-  color: var(--color-black) !important;
+  background: var(--color-yellow);
+  color: var(--color-black);
 }

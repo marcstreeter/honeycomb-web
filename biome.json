@@ -1,5 +1,5 @@
 {
-  "$schema": "https://biomejs.dev/schemas/2.1.2/schema.json",
+  "$schema": "https://biomejs.dev/schemas/2.2.2/schema.json",
   "linter": {
     "enabled": true,
     "rules": {
@@ -33,7 +33,7 @@
   },
   "files": {
     "ignoreUnknown": false,
-    "includes": ["**/*.{js,jsx,ts,tsx,json,css}", "!dist/**", "!node_modules/**"]
+    "includes": ["**/*.{js,jsx,ts,tsx,json,css}", "!dist", "!node_modules"]
   },
   "overrides": [
     {

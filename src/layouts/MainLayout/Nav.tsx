@@ -17,7 +17,7 @@ import {
   useTheme,
 } from '@mui/material';
 import type React from 'react';
-import { useState } from 'react';
+import { useId, useState } from 'react';
 import Icon from '../../assets/icons/Icon';
 import Logo from '../../assets/icons/logo.svg';
 import Button from '../../components/Button';
@@ -49,6 +49,10 @@ const Nav: React.FC<NavProps> = ({
   handleMenuClose,
   isScrolled,
 }) => {
+  const acMenuId = useId();
+  const heatingMenuId = useId();
+  const iaqMenuId = useId();
+
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -270,13 +274,13 @@ const Nav: React.FC<NavProps> = ({
                 onClick={(e) => handleMenuOpen(e, setAcAnchor)}
                 onMouseEnter={(e) => handleMenuHoverOpen(e, setAcAnchor)}
                 endIcon={<Icon iconKey="chevron-down" className={`${styles['chevron-icon']}`} />}
-                aria-owns={acAnchor ? 'ac-menu' : undefined}
+                aria-owns={acAnchor ? acMenuId : undefined}
                 aria-haspopup="true"
               >
                 Air Conditioning
               </Button>
               <Menu
-                id="ac-menu"
+                id={acMenuId}
                 anchorEl={acAnchor}
                 open={Boolean(acAnchor)}
                 onClose={() => handleMenuClose(setAcAnchor)}
@@ -305,13 +309,13 @@ const Nav: React.FC<NavProps> = ({
                 onClick={(e) => handleMenuOpen(e, setHeatingAnchor)}
                 onMouseEnter={(e) => handleMenuHoverOpen(e, setHeatingAnchor)}
                 endIcon={<Icon iconKey="chevron-down" className={`${styles['chevron-icon']}`} />}
-                aria-owns={heatingAnchor ? 'heating-menu' : undefined}
+                aria-owns={heatingAnchor ? heatingMenuId : undefined}
                 aria-haspopup="true"
               >
                 Heating
               </Button>
               <Menu
-                id="heating-menu"
+                id={heatingMenuId}
                 anchorEl={heatingAnchor}
                 open={Boolean(heatingAnchor)}
                 onClose={() => handleMenuClose(setHeatingAnchor)}
@@ -340,13 +344,13 @@ const Nav: React.FC<NavProps> = ({
                 onClick={(e) => handleMenuOpen(e, setIaqAnchor)}
                 onMouseEnter={(e) => handleMenuHoverOpen(e, setIaqAnchor)}
                 endIcon={<Icon iconKey="chevron-down" className={`${styles['chevron-icon']}`} />}
-                aria-owns={iaqAnchor ? 'iaq-menu' : undefined}
+                aria-owns={iaqAnchor ? iaqMenuId : undefined}
                 aria-haspopup="true"
               >
                 Indoor Air Quality
               </Button>
               <Menu
-                id="iaq-menu"
+                id={iaqMenuId}
                 anchorEl={iaqAnchor}
                 open={Boolean(iaqAnchor)}
                 onClose={() => handleMenuClose(setIaqAnchor)}

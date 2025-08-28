@@ -4,7 +4,7 @@ import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns';
 import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import type React from 'react';
-import { useState } from 'react';
+import { useId, useState } from 'react';
 
 interface ContactFormData {
   firstName: string;
@@ -22,6 +22,7 @@ interface ContactModalProps {
 }
 
 const ContactModal: React.FC<ContactModalProps> = ({ open, onClose }) => {
+  const titleId = useId();
   const [formData, setFormData] = useState<ContactFormData>({
     firstName: '',
     lastName: '',
@@ -109,10 +110,10 @@ const ContactModal: React.FC<ContactModalProps> = ({ open, onClose }) => {
         onClose={handleClose}
         maxWidth="sm"
         fullWidth
-        aria-labelledby="contact-form-title"
+        aria-labelledby={titleId}
         disableScrollLock
       >
-        <DialogTitle id="contact-form-title" sx={{ fontWeight: 'bold' }}>
+        <DialogTitle id={titleId} sx={{ fontWeight: 'bold' }}>
           Get Your Free Consultation
         </DialogTitle>
         <DialogContent>
