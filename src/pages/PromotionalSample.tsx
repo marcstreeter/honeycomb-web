@@ -4,6 +4,8 @@ import HoneyIcon from '@components/HoneyIcon';
 import PromotionalPage from '@components/PromotionalPage';
 import honeycombTeamImg from '@images/img-honeycomb-team.webp';
 
+const buttonAction = () => console.log('General CTA clicked');
+
 const PromotionalSample = () => {
   // Set expiration time to 50 minutes from now
   const expirationTime = new Date(Date.now() + 50 * 60 * 1000);
@@ -14,7 +16,7 @@ const PromotionalSample = () => {
       'Upgrade your new system (10+ years) to a high-efficiency Honeycomb install and start saving immediately.',
     buttonText: 'Claim My Guaranteed Savings',
     backgroundImage: honeycombTeamImg,
-    buttonAction: () => console.log('CTA clicked'),
+    buttonAction,
   };
 
   const whySection = {
@@ -55,7 +57,7 @@ const PromotionalSample = () => {
     description:
       "Save at least $1000 on your energy bills in the first year after installation... Or we'll pay you the $1000 difference ourselves.",
     buttonText: 'Book My Free Estimate',
-    buttonAction: () => console.log('Guarantee CTA clicked'),
+    buttonAction,
   };
 
   const stackSection = {
