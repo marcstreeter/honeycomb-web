@@ -1,5 +1,8 @@
 import Button from '@components/Button';
 import { Box, Container, Typography } from '@mui/material';
+import type React from 'react';
+import { useState } from 'react';
+import ContactModal from './ContactModal';
 import CountdownTimer from './CountdownTimer';
 
 export interface HeroSection {
@@ -75,6 +78,15 @@ const PromotionalPage = ({
   reviewsSection,
   timerSection,
 }: PromotionalPageProps) => {
+  const [isContactModalOpen, setIsContactModalOpen] = useState(false);
+
+  const handleOpenContactModal = () => {
+    setIsContactModalOpen(true);
+  };
+
+  const handleCloseContactModal = () => {
+    setIsContactModalOpen(false);
+  };
   const renderStars = (count: number) => {
     return Array.from({ length: count }, (_, i) => (
       <Typography
@@ -140,7 +152,7 @@ const PromotionalPage = ({
               <Button
                 variant="contained"
                 size="large"
-                onClick={heroSection.buttonAction}
+                onClick={heroSection.buttonAction || handleOpenContactModal}
                 sx={{
                   backgroundColor: 'var(--color-black)',
                   color: 'var(--color-white)',
@@ -248,7 +260,7 @@ const PromotionalPage = ({
                 <Button
                   variant="contained"
                   size="large"
-                  onClick={guaranteeSection.buttonAction}
+                  onClick={guaranteeSection.buttonAction || handleOpenContactModal}
                   sx={{
                     backgroundColor: 'var(--color-black)',
                     color: 'var(--color-white)',
@@ -357,6 +369,8 @@ const PromotionalPage = ({
           </Container>
         </Box>
       )}
+
+      <ContactModal open={isContactModalOpen} onClose={handleCloseContactModal} />
     </Box>
   );
 };

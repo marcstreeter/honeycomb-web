@@ -16,7 +16,6 @@ const PromotionalSample = () => {
       'Upgrade your new system (10+ years) to a high-efficiency Honeycomb install and start saving immediately.',
     buttonText: 'Claim My Guaranteed Savings',
     backgroundImage: honeycombTeamImg,
-    buttonAction,
   };
 
   const whySection = {
