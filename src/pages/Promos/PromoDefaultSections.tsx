@@ -1,16 +1,12 @@
+
+import honeycombTeamImg from '@images/img-honeycomb-team.webp';
 import BadgeExperienceIcon from '@assets/icons/BadgeExperienceIcon.tsx';
 import Icon from '@assets/icons/Icon.tsx';
 import HoneyIcon from '@components/HoneyIcon';
-import PromotionalPage from '@components/PromotionalPage';
-import honeycombTeamImg from '@images/img-honeycomb-team.webp';
 
-const buttonAction = () => console.log('General CTA clicked');
 
-const PromotionalSample = () => {
-  // Set a static expiration date (e.g., end of year 2024)
-  const expirationTime = new Date('2025-08-27T22:59:59');
 
-  const heroSection = {
+const heroSection = {
     mainText: 'Or we pay you $1,000',
     subText:
       'Upgrade your new system (10+ years) to a high-efficiency Honeycomb install and start saving immediately.',
@@ -56,7 +52,6 @@ const PromotionalSample = () => {
     description:
       "Save at least $1000 on your energy bills in the first year after installation... Or we'll pay you the $1000 difference ourselves.",
     buttonText: 'Book My Free Estimate',
-    buttonAction,
   };
 
   const stackSection = {
@@ -115,18 +110,4 @@ const PromotionalSample = () => {
     location: 'San Antonio',
   };
 
-  const timerSection = { expirationTime };
-
-  return (
-    <PromotionalPage
-      heroSection={heroSection}
-      whySection={whySection}
-      guaranteeSection={guaranteeSection}
-      stackSection={stackSection}
-      reviewsSection={reviewsSection}
-      timerSection={timerSection}
-    />
-  );
-};
-
-export default PromotionalSample;
+  export { heroSection, whySection, guaranteeSection, stackSection, reviewsSection };

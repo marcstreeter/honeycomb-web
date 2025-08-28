@@ -211,20 +211,6 @@ const Nav: React.FC<NavProps> = ({
         <ListItem disablePadding>
           <ListItemButton
             component="a"
-            href="/upgrade"
-            className={styles['drawer-item']}
-            onClick={handleDrawerClose}
-          >
-            <ListItemIcon>
-              <Icon iconKey="tool-box" className={styles['menu-icon']} fill="#ffd700" />
-            </ListItemIcon>
-            <ListItemText primary="Upgrade Offer" />
-          </ListItemButton>
-        </ListItem>
-
-        <ListItem disablePadding>
-          <ListItemButton
-            component="a"
             href="#schedule"
             className={styles['drawer-item']}
             onClick={handleDrawerClose}

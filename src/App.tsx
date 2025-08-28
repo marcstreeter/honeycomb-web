@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import HomeLayout from './layouts/Home/HomeLayout';
 import MainLayout from './layouts/MainLayout/MainLayout';
-import PromotionalSample from './pages/PromotionalSample';
+import { Promo08282025A, Promo08282025B, Promo08282025C, Promo08282025D, Promo08282025E } from './pages/Promos';
 
 function App() {
   const [acAnchor, setAcAnchor] = useState<null | HTMLElement>(null);
@@ -24,7 +24,11 @@ function App() {
   return (
     <Routes>
       {/* Standalone pages without navigation */}
-      <Route path="/promotional-sample" element={<PromotionalSample />} />
+        <Route path="/promo-08282025-1" element={<Promo08282025A />} />
+        <Route path="/promo-08282025-2" element={<Promo08282025B />} />
+        <Route path="/promo-08282025-3" element={<Promo08282025C />} />
+        <Route path="/promo-08282025-4" element={<Promo08282025D />} />
+        <Route path="/promo-08282025-5" element={<Promo08282025E />} />
       {/* Main site with navigation */}
       <Route
         path="/*"
